@@ -12,7 +12,7 @@
     "yarn": ">=2"
   },
   "scripts": {
-    "build": "cross-env NODE_ENV=production webpack",
+    "build": "cross-env NODE_ENV=production webpack --progress",
     "build:analyze": "cross-env NODE_ENV=production WITH_BUNDLE_ANALYZER=true webpack",
     "clean": "rimraf dist build",
     "format": "yarn g:format",
