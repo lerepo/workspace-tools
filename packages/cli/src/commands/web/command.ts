@@ -4,18 +4,21 @@ import { BaseCommand } from '../../core';
 
 import { HttpServer, ApiHandler } from './server';
 
-export class AnalyzeCommand extends BaseCommand {
+export class WebCommand extends BaseCommand {
   static usage: Usage = Command.Usage({
-    category: `Workspace-related commands`,
-    description: `Analyze and visualize dependencies between workspaces in the project`,
+    description: 'Start the locally served web-app for the lrt UI.',
     details: `
-      This command will analyze dependencies between all workspaces in the project and start a local web server to visualize and interact with the dependency graph.
-    `,
+      This command will will start a local HTTP server to serve a web application
+      that can be used to interact with the \`lrt\` command line tool. Through the
+      app, you can explore the workspace dependencies, visualize them in a graph and
+      you can also run a series of checks to audit the dependencies and the health
+      of the project workspace.`,
     examples: [
       [
-        `Analyze dependencies and start the visualization web server using defaults`,
-        `yarn workspaces analyze`
-      ]
+        'Start the app when the `@lerepo/cli` is installed as a dev dependency in the project.',
+        'yarn lrt web'
+      ],
+      ['Start the web application using yarn dlx.', 'yarn dlx -p @lerepo/cli lrt web']
     ]
   });
 
