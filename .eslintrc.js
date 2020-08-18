@@ -22,7 +22,7 @@ module.exports = {
     jest: true
   },
   plugins: [
-    'md',
+    'mdx',
     '@typescript-eslint',
     'optimize-regex',
     'no-secrets',
@@ -49,7 +49,7 @@ module.exports = {
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:json/recommended',
-    'plugin:md/recommended',
+    'plugin:mdx/recommended',
     'plugin:security/recommended',
     'plugin:editorconfig/noconflict',
     'plugin:promise/recommended',
@@ -85,6 +85,8 @@ module.exports = {
   rules: {
     // JSON
     'json/*': ['error', 'allowComments'],
+
+    // MARKDOWN
 
     // SECURITY
     'no-secrets/no-secrets': 'error',
