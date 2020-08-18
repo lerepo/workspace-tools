@@ -50,9 +50,6 @@
     "pretty-quick": "2.0.1",
     "typescript": "^3.9.7"
   },
-  "resolutions": {
-    "@lerepo/cli": "portal:/E:/dev/projects/workspaces/yarn-plugins/packages/cli"
-  },
   "husky": {
     "hooks": {
       "pre-commit": "yarn lint-staged --quiet",
