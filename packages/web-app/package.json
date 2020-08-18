@@ -22,7 +22,6 @@
     "lint:fix": "run-lint --fix",
     "lint:staged": "yarn g:lint:staged",
     "open": "open-cli http://localhost:3000 -- firefox -devtools",
-    "prepack": "yarn clean && yarn build",
     "start": "concurrently \"npm:wds:mon\" \"npm:open\"",
     "test": "jest --passWithNoTests",
     "test:watch": "jest --watch",
@@ -112,5 +111,8 @@
       "Firefox ESR",
       "not ie < 11"
     ]
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
