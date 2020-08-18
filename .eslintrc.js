@@ -22,7 +22,6 @@ module.exports = {
     jest: true
   },
   plugins: [
-    'mdx',
     '@typescript-eslint',
     'optimize-regex',
     'no-secrets',
@@ -49,7 +48,6 @@ module.exports = {
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:json/recommended',
-    'plugin:mdx/recommended',
     'plugin:security/recommended',
     'plugin:editorconfig/noconflict',
     'plugin:promise/recommended',
