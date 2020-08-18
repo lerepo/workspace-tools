@@ -6,8 +6,8 @@ import * as url from 'url';
 import { ParsedUrlQuery } from 'querystring';
 
 const WEBAPP_PACKAGE = '@lerepo/web-app';
-const DEFAULT_SERVER_PORT = 3000;
-const DEFAULT_SERVER_HOST = '127.0.0.1';
+export const DEFAULT_SERVER_PORT = 3000;
+export const DEFAULT_SERVER_HOST = '127.0.0.1';
 
 export type ApiHandler = (
   path: string,

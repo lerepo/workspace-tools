@@ -67,7 +67,9 @@ module.exports = {
           // wouldn't be able to parse *.md files.
           // You also can configure other options supported by prettier here -
           // "prose-wrap" is particularly useful for *.md files
-          { parser: 'markdown' }
+          {
+            parser: 'markdown'
+          }
         ]
       }
     },
@@ -89,6 +91,7 @@ module.exports = {
     // SECURITY
     'no-secrets/no-secrets': 'error',
     'security/detect-object-injection': 'off',
+    'security/detect-unsafe-regex': 'off',
 
     // OTHER
     'optimize-regex/optimize-regex': 'warn',

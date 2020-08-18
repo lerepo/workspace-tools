@@ -2546,6 +2546,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/jest", "npm:26.0.9"],
             ["@types/lodash", "npm:4.14.159"],
             ["@types/node", "npm:14.0.27"],
+            ["@types/yup", "npm:0.29.5"],
             ["babel-loader", "virtual:4839a837894bedf62ab7b96f182ef5b11d7ce17d201aae9f815b0d20d554284013690f5e1b24f3dccb9e51bb150c98ce2beaa81bae8ab653e53aa7e3f0674b4d#npm:8.1.0"],
             ["babel-plugin-import", "npm:1.13.0"],
             ["babel-plugin-module-resolver", "npm:4.0.0"],
@@ -3434,6 +3435,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-yargs-parser-npm-15.0.0-db1d59832c-74bfaefde9.zip/node_modules/@types/yargs-parser/",
           "packageDependencies": [
             ["@types/yargs-parser", "npm:15.0.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@types/yup", [
+        ["npm:0.29.5", {
+          "packageLocation": "./.yarn/cache/@types-yup-npm-0.29.5-6029714884-c0fc8b1a51.zip/node_modules/@types/yup/",
+          "packageDependencies": [
+            ["@types/yup", "npm:0.29.5"]
           ],
           "linkType": "HARD",
         }]

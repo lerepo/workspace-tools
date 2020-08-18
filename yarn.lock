@@ -2051,6 +2051,7 @@ __metadata:
     "@types/jest": ^26.0.9
     "@types/lodash": ^4.14.159
     "@types/node": ^14.0.27
+    "@types/yup": ^0.29.5
     babel-loader: ^8.1.0
     babel-plugin-import: ^1.13.0
     babel-plugin-module-resolver: ^4.0.0
@@ -2844,6 +2845,13 @@ __metadata:
   dependencies:
     "@types/yargs-parser": "*"
   checksum: 2133c8cb5878d13959844f98e546e69dacdf44cd9baf87d84c828a1a093febfc97c8f4df19cffd34a4a4f726a3cdb1851da4391176accf56534c5f8a1c271f46
+  languageName: node
+  linkType: hard
+
+"@types/yup@npm:^0.29.5":
+  version: 0.29.5
+  resolution: "@types/yup@npm:0.29.5"
+  checksum: c0fc8b1a51d94d5a3faff46bc081c7141baa03ac43de6144b81cd9b45c43b9d85bbd977c54517fe5652b729a70afe5913e82db91c72edb7b60ce6955e04c20bf
   languageName: node
   linkType: hard
 
