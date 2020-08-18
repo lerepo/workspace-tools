@@ -1,0 +1,11 @@
+{
+  "typescript.tsdk": ".yarn/sdks/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "eslint.nodePath": ".yarn/sdks",
+  "editor.rulers": [
+    80,
+    100
+  ],
+  "prettier.prettierPath": ".yarn/sdks/prettier/index.js",
+  "editor.renderIndentGuides": false
+}

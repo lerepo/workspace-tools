@@ -1,0 +1,28 @@
+{
+  "extends": "../../tsconfig.base.json",
+
+  "compilerOptions": {
+    "outDir": "./build/out-tsc",
+    "jsx": "react",
+
+    // Setting this to true will cause errors with React import.
+    // We rely on linting to detect these cases and eventuallly just ignore
+    // linting error for the React import.
+    "noUnusedLocals": false,
+    "baseUrl": "src",
+    "paths": {
+      "~/*": ["*"]
+    }
+  },
+
+  "files": [],
+  "include": [],
+  "references": [
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.spec.json"
+    }
+  ]
+}

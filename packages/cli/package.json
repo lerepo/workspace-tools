@@ -1,0 +1,81 @@
+{
+  "name": "@lerepo/cli",
+  "version": "0.0.0",
+  "description": "Command line interface for the mono-repo workspace collection of tools.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lerepo/workspace-tools.git"
+  },
+  "main": "./lib/index.js",
+  "bin": {
+    "lrt": "./bin/lrt"
+  },
+  "engines": {
+    "node": ">=12.18.3",
+    "yarn": ">=2"
+  },
+  "scripts": {
+    "babel:build": "babel src --out-dir lib --extensions '.ts'",
+    "babel:watch": "babel src --out-dir lib --extensions '.ts' --watch",
+    "build": "yarn babel:build",
+    "clean": "rimraf dist build lib",
+    "cli": "yarn node ./lib/cli.js web",
+    "format": "yarn g:format",
+    "format:all": "yarn g:format:all",
+    "format:list": "yarn g:format:list",
+    "lint": "yarn g:lint",
+    "lint:fix": "run-lint --fix",
+    "lint:staged": "yarn g:lint:staged",
+    "open": "open-cli http://localhost:3211 -- firefox -devtools",
+    "prepack": "yarn clean && yarn build",
+    "start": "concurrently \"npm:cli\" \"npm:open\"",
+    "test": "jest --passWithNoTests",
+    "test:watch": "jest --watch",
+    "tsc:watch": "yarn run type-check --watch",
+    "type-check": "tsc --noEmit --incremental false -p tsconfig.app.json"
+  },
+  "dependencies": {
+    "@lerepo/web-app": "workspace:~0.0.0",
+    "clipanion": "^2.4.4",
+    "execa": "^4.0.3",
+    "lodash": "^4.17.19",
+    "regenerator-runtime": "^0.13.7",
+    "yup": "^0.29.3"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.10.5",
+    "@babel/core": "^7.11.1",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/plugin-proposal-decorators": "^7.10.5",
+    "@babel/plugin-proposal-object-rest-spread": "^7.11.0",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/preset-typescript": "^7.10.4",
+    "@types/jest": "^26.0.9",
+    "@types/lodash": "^4.14.159",
+    "@types/node": "^14.0.27",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-import": "^1.13.0",
+    "babel-plugin-module-resolver": "^4.0.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "concurrently": "^5.3.0",
+    "copy-webpack-plugin": "^6.0.3",
+    "core-js": "^3.6.5",
+    "cross-env": "^7.0.2",
+    "dotenv": "^8.2.0",
+    "file-loader": "^6.0.0",
+    "fork-ts-checker-webpack-plugin": "^5.0.14",
+    "jest": "26.3.0",
+    "nodemon": "^2.0.4",
+    "open-cli": "^6.0.1",
+    "pnp-webpack-plugin": "^1.6.4",
+    "rimraf": "^3.0.2",
+    "source-map-loader": "^1.0.1",
+    "terser-webpack-plugin": "^4.1.0",
+    "typescript": "3.9.7",
+    "url-loader": "^4.1.0",
+    "webpack": "^4.44.1",
+    "webpack-bundle-analyzer": "^3.8.0",
+    "webpack-cli": "^3.3.12"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "exec": "yarn wds",
+  "env": {
+    "NODE_ENV": "development"
+  },
+  "watch": [".env", "webpack.config.js", "src/styles/antd-theme.scss"]
+}
