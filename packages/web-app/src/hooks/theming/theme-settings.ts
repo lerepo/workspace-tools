@@ -181,9 +181,7 @@ export const useThemeSettings = (): ThemeSettings => {
       dispatch({ type: UPDATE_TONE_ACTION });
     };
     if (PREFER_DARK_MQL) {
-      PREFER_DARK_MQL.addEventListener('change', onPreferredColorSchemeChanged, {
-        passive: true
-      });
+      PREFER_DARK_MQL.addListener(onPreferredColorSchemeChanged);
       return () => {
         PREFER_DARK_MQL.removeListener(onPreferredColorSchemeChanged);
       };
