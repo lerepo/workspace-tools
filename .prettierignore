@@ -71,7 +71,7 @@ common/temp/
 temp
 build
 dist
-lib
+packages/**/lib
 *.scss.ts
 *.sass.ts
 
