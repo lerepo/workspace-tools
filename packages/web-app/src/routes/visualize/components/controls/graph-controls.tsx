@@ -12,7 +12,8 @@ const useStyles = makeStyles({
   },
   filter: {
     margin: '12px',
-    width: 'auto'
+    width: 'auto',
+    flexShrink: 0
   }
 });
 
