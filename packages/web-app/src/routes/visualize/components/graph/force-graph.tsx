@@ -148,6 +148,7 @@ export const ForceGraph: React.FC<{ data: Workspace[]; selection: string[] }> = 
       width={width}
       height={height}
       graphData={graphData}
+      linkColor={() => 'darkgrey'}
       linkDirectionalArrowLength={3.5}
       linkDirectionalArrowRelPos={1}
       linkCurvature={0.25}
