@@ -1,5 +1,11 @@
 # @lerepo/web-app
 
+## 0.0.3
+
+### Patch Changes
+
+- 2be4c99: ci: fix bad published package
+
 ## 0.0.2
 
 ### Patch Changes

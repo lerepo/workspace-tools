@@ -1,6 +1,6 @@
 {
   "name": "@lerepo/web-app",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Companion web-app for @lerepo/cli.",
   "license": "MIT",
   "repository": {
@@ -22,6 +22,7 @@
     "lint:fix": "run-lint --fix",
     "lint:staged": "yarn g:lint:staged",
     "open": "open-cli http://localhost:3000 -- firefox -devtools",
+    "prepack": "yarn clean && yarn build",
     "start": "concurrently \"npm:wds:mon\" \"npm:open\"",
     "test": "jest --passWithNoTests",
     "test:watch": "jest --watch",
