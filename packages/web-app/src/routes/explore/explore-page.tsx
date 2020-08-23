@@ -20,11 +20,12 @@ export const ExplorePage: React.FC = () => {
 
   return (
     <>
-      {status === 'idle' && (
-        <Box className={classes.spinner}>
-          <CircularProgress />
-        </Box>
-      )}
+      {status === 'idle' ||
+        (status === 'pending' && (
+          <Box className={classes.spinner}>
+            <CircularProgress />
+          </Box>
+        ))}
       {status === 'error' && <div>{JSON.stringify(error)}</div>}
       {status === 'success' && <WorkspaceList data={data} />}
     </>
