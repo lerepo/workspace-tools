@@ -1,5 +1,13 @@
 # @lerepo/web-app
 
+## 0.0.2
+
+### Patch Changes
+
+- eac4bc5: fix: show spinner when API request is pending.
+- cc60b7e: chore: update dependencies
+- a28c47f: fix: chose a color for graph links more suitable for dark and light themes.
+
 ## 0.0.1
 
 ### Patch Changes

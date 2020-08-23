@@ -1,5 +1,16 @@
 # @lerepo/cli
 
+## 0.0.3
+
+### Patch Changes
+
+- 4c63bae: feat: configurable server port and host as command line options to the `web` command.
+- cc60b7e: chore: update dependencies
+- Updated dependencies [eac4bc5]
+- Updated dependencies [cc60b7e]
+- Updated dependencies [a28c47f]
+  - @lerepo/web-app@0.0.2
+
 ## 0.0.1
 
 ### Patch Changes
