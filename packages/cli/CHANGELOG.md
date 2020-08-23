@@ -1,5 +1,13 @@
 # @lerepo/cli
 
+## 0.0.5
+
+### Patch Changes
+
+- Updated dependencies [0fb864d]
+- Updated dependencies [3f7b86d]
+  - @lerepo/web-app@0.0.4
+
 ## 0.0.3
 
 ### Patch Changes

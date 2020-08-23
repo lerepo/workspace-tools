@@ -1,5 +1,12 @@
 # @lerepo/web-app
 
+## 0.0.4
+
+### Patch Changes
+
+- 0fb864d: fix: use addListener instead of addEventListener on the MQL for dark mode as Safari does not support addEventListener.
+- 3f7b86d: fix: graph filter text field should not shrink with flex.
+
 ## 0.0.3
 
 ### Patch Changes
