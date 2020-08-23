@@ -72,7 +72,7 @@ common/autoinstallers/*/.npmrc
 temp
 dist
 build
-lib
+packages/**/lib
 *.scss.ts
 *.sass.ts
 

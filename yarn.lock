@@ -2047,7 +2047,7 @@ __metadata:
     "@babel/plugin-proposal-object-rest-spread": ^7.11.0
     "@babel/preset-env": ^7.11.0
     "@babel/preset-typescript": ^7.10.4
-    "@lerepo/web-app": "workspace:^0.0.1"
+    "@lerepo/web-app": "workspace:^0.0.3"
     "@types/jest": ^26.0.10
     "@types/lodash": ^4.14.159
     "@types/node": ^14.6.0
@@ -2085,7 +2085,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@lerepo/web-app@workspace:^0.0.1, @lerepo/web-app@workspace:packages/web-app":
+"@lerepo/web-app@workspace:^0.0.3, @lerepo/web-app@workspace:packages/web-app":
   version: 0.0.0-use.local
   resolution: "@lerepo/web-app@workspace:packages/web-app"
   dependencies:
