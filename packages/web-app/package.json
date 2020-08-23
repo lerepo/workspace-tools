@@ -13,6 +13,7 @@
   },
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack --progress",
+    "build:quiet": "cross-env NODE_ENV=production webpack --display=none",
     "build:analyze": "cross-env NODE_ENV=production WITH_BUNDLE_ANALYZER=true webpack",
     "clean": "rimraf dist build",
     "format": "yarn g:format",
@@ -22,7 +23,7 @@
     "lint:fix": "run-lint --fix",
     "lint:staged": "yarn g:lint:staged",
     "open": "open-cli http://localhost:3000 -- firefox -devtools",
-    "prepack": "yarn clean && yarn build",
+    "prepack": "yarn clean && yarn build:quiet",
     "start": "concurrently \"npm:wds:mon\" \"npm:open\"",
     "test": "jest --passWithNoTests",
     "test:watch": "jest --watch",
