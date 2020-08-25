@@ -1,0 +1,64 @@
+{
+  "name": "@lerepo/detect-package-manager-cli",
+  "version": "0.0.0",
+  "description": "CLI to detect which package manager is being used.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lerepo/workspace-tools.git"
+  },
+  "main": "./lib/index.js",
+  "bin": {
+    "detct-pm": "./bin/detect-pm"
+  },
+  "engines": {
+    "node": ">=12.18.3"
+  },
+  "scripts": {
+    "babel:build": "babel src --out-dir lib --extensions '.ts' --env-name production",
+    "babel:watch": "babel src --out-dir lib --extensions '.ts' --watch",
+    "build": "yarn babel:build",
+    "clean": "rimraf dist build lib",
+    "cli": "yarn node ./lib/cli.js",
+    "format": "yarn g:format",
+    "format:all": "yarn g:format:all",
+    "format:list": "yarn g:format:list",
+    "lint": "yarn g:lint",
+    "lint:fix": "run-lint --fix",
+    "lint:staged": "yarn g:lint:staged",
+    "prepack": "yarn clean && yarn build",
+    "start": "yarn cli",
+    "test": "jest --passWithNoTests",
+    "test:watch": "jest --watch",
+    "tsc:watch": "yarn run type-check --watch",
+    "type-check": "tsc --noEmit --incremental false -p tsconfig.app.json"
+  },
+  "dependencies": {
+    "@lerepo/detect-package-manager": "workspace:^0.0.0",
+    "clipanion": "^2.4.4",
+    "regenerator-runtime": "^0.13.7",
+    "yup": "^0.29.3"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.10.5",
+    "@babel/core": "^7.11.4",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/plugin-proposal-decorators": "^7.10.5",
+    "@babel/plugin-proposal-object-rest-spread": "^7.11.0",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/preset-typescript": "^7.10.4",
+    "@types/jest": "^26.0.10",
+    "@types/node": "^14.6.0",
+    "@types/yup": "^0.29.6",
+    "babel-plugin-define": "^1.0.0",
+    "babel-plugin-import": "^1.13.0",
+    "babel-plugin-module-resolver": "^4.0.0",
+    "core-js": "^3.6.5",
+    "jest": "^26.4.2",
+    "rimraf": "^3.0.2",
+    "typescript": "3.9.7"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
