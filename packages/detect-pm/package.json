@@ -1,6 +1,6 @@
 {
   "name": "@lerepo/detect-package-manager",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Library to detect which package manager is being used.",
   "license": "MIT",
   "repository": {
@@ -14,7 +14,7 @@
   "scripts": {
     "babel:build": "babel src --out-dir lib --extensions '.ts' --env-name production",
     "babel:watch": "babel src --out-dir lib --extensions '.ts' --watch",
-    "build": "yarn babel:build && yarn tsc:types",
+    "build": "yarn babel:build --quiet && yarn tsc:types",
     "clean": "rimraf dist build lib",
     "format": "yarn g:format",
     "format:all": "yarn g:format:all",

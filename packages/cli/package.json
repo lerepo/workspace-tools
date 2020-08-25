@@ -1,6 +1,6 @@
 {
   "name": "@lerepo/cli",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Command line interface for the mono-repo workspace collection of tools.",
   "license": "MIT",
   "repository": {
@@ -28,7 +28,7 @@
     "lint:fix": "run-lint --fix",
     "lint:staged": "yarn g:lint:staged",
     "open": "open-cli http://localhost:3211 -- firefox -devtools",
-    "prepack": "yarn clean && yarn build",
+    "prepack": "yarn clean && yarn build --quiet",
     "start": "concurrently \"npm:cli\" \"npm:open\"",
     "test": "jest --passWithNoTests",
     "test:watch": "jest --watch",
@@ -36,7 +36,7 @@
     "type-check": "tsc --noEmit --incremental false -p tsconfig.app.json"
   },
   "dependencies": {
-    "@lerepo/web-app": "workspace:^0.0.4",
+    "@lerepo/web-app": "workspace:^0.0.5",
     "clipanion": "^2.4.4",
     "execa": "^4.0.3",
     "lodash": "^4.17.20",

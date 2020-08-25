@@ -1,6 +1,6 @@
 {
   "name": "@lerepo/detect-package-manager-cli",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "CLI to detect which package manager is being used.",
   "license": "MIT",
   "repository": {
@@ -26,7 +26,7 @@
     "lint": "yarn g:lint",
     "lint:fix": "run-lint --fix",
     "lint:staged": "yarn g:lint:staged",
-    "prepack": "yarn clean && yarn build",
+    "prepack": "yarn clean && yarn build --quiet",
     "start": "yarn cli",
     "test": "jest --passWithNoTests",
     "test:watch": "jest --watch",
@@ -34,7 +34,7 @@
     "type-check": "tsc --noEmit --incremental false -p tsconfig.app.json"
   },
   "dependencies": {
-    "@lerepo/detect-package-manager": "workspace:^0.0.0",
+    "@lerepo/detect-package-manager": "workspace:^0.1.0",
     "clipanion": "^2.4.4",
     "regenerator-runtime": "^0.13.7",
     "yup": "^0.29.3"

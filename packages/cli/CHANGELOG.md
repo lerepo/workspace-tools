@@ -1,5 +1,13 @@
 # @lerepo/cli
 
+## 0.0.6
+
+### Patch Changes
+
+- 371995f: chore: update dependencies
+- Updated dependencies [371995f]
+  - @lerepo/web-app@0.0.5
+
 ## 0.0.5
 
 ### Patch Changes
