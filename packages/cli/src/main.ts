@@ -1,14 +1,16 @@
-import { Cli } from 'clipanion';
-import { CommandContext } from './core/context';
 import * as _ from 'lodash';
-import { WebCommand } from './commands/web/command';
-import { HelpCommand } from './core/help';
+import { Cli } from 'clipanion';
+
+import { CommandContext } from '~/core/context';
+import { HelpCommand } from '~/core/help';
+import { VersionCommand } from '~/core/version';
+import { WebCommand } from '~/commands/web/command';
 
 import { version } from '../package.json';
 
 export async function main(): Promise<void> {
   async function run(): Promise<void> {
-    const cli = Cli.from<CommandContext>([WebCommand, HelpCommand], {
+    const cli = Cli.from<CommandContext>([WebCommand, HelpCommand, VersionCommand], {
       binaryLabel: `LeRepo Tools`,
       binaryName: `lrt`,
       binaryVersion: version
