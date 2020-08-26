@@ -106,6 +106,7 @@ yarn.lock
 *.ico
 *.jpg
 *.png
+*.svg
 
 # text files
 LICENSE

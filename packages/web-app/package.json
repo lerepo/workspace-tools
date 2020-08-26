@@ -31,7 +31,9 @@
     "tsc:watch": "yarn type-check --watch",
     "type-check": "tsc --noEmit --incremental false -p tsconfig.app.json",
     "wds": "cross-env NODE_ENV=development webpack-dev-server",
-    "wds:mon": "nodemon --config .nodemon-wds.json"
+    "wds:mon": "nodemon --config .nodemon-wds.json",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.0",
@@ -52,7 +54,13 @@
     "@babel/preset-env": "^7.11.0",
     "@babel/preset-react": "^7.10.4",
     "@babel/preset-typescript": "^7.10.4",
+    "@mdx-js/react": "^1.6.16",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.4.1",
+    "@storybook/addon-actions": "^6.0.18",
+    "@storybook/addon-docs": "^6.0.18",
+    "@storybook/addon-essentials": "^6.0.18",
+    "@storybook/addon-links": "^6.0.18",
+    "@storybook/react": "^6.0.18",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^10.4.9",
     "@types/jest": "^26.0.10",
@@ -85,6 +93,7 @@
     "postcss-loader": "^3.0.0",
     "postcss-normalize": "^9.0.0",
     "postcss-preset-env": "^6.7.0",
+    "react-is": "^16.13.1",
     "react-refresh": "^0.8.3",
     "regenerator-runtime": "^0.13.7",
     "resolve-url-loader": "^3.1.1",

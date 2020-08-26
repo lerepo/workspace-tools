@@ -187,7 +187,11 @@ module.exports = (env, options) => {
                 cacheDirectory: true,
                 // See #6846 for context on why cacheCompression is disabled
                 cacheCompression: false,
-                compact: isEnvProduction
+                compact: isEnvProduction,
+                // DO NOT apply the Babel plugin in production mode!
+                plugins: [
+                  isEnvDevelopment && require.resolve('react-refresh/babel')
+                ].filter(Boolean)
               }
             },
             {

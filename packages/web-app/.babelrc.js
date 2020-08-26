@@ -33,9 +33,7 @@ module.exports = (api) => {
       // ['import', { libraryName: '@blueprintjs/core', libraryDirectory: 'lib/esm/components' }],
       '@babel/proposal-class-properties',
       '@babel/proposal-object-rest-spread',
-      '@babel/plugin-proposal-optional-chaining',
-      // Applies the react-refresh Babel plugin on non-production modes only
-      api.env('development') && 'react-refresh/babel'
+      '@babel/plugin-proposal-optional-chaining'
     ].filter(Boolean)
   };
 };
