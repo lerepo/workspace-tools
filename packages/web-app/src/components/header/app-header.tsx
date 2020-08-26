@@ -30,12 +30,12 @@ export const AppHeader: React.FC<HeaderProps> = ({ toggleDarkMode }) => {
           )}
           <Hidden smUp>
             <HeaderTitle variant="h6" color="textPrimary">
-              @yarnpkg/berry
+              Workspace Tools (TODO: use project name)
             </HeaderTitle>
           </Hidden>
           <Hidden xsDown>
             <HeaderTitle variant="h5" color="textPrimary">
-              @yarnpkg/berry
+              Workspace Tools (TODO: use project name)
             </HeaderTitle>
           </Hidden>
           <Hidden xsDown>
