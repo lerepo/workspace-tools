@@ -90,7 +90,6 @@ export class HttpServer {
     let contentType = 'application/octet-stream';
     // Get the file extension
     const extname = path.extname(url);
-    console.log('extension: ', extname);
     // Set the contentType based on the mime type
     const mimeType = this._mimeTypes.get(extname);
     if (mimeType) {
