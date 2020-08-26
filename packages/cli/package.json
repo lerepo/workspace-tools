@@ -27,7 +27,7 @@
     "lint": "yarn g:lint",
     "lint:fix": "run-lint --fix",
     "lint:staged": "yarn g:lint:staged",
-    "open": "open-cli http://localhost:3211 -- firefox -devtools",
+    "open": "open-cli http://localhost:3000 -- firefox -devtools",
     "prepack": "yarn clean && yarn build --quiet",
     "start": "concurrently \"npm:cli\" \"npm:open\"",
     "test": "jest --passWithNoTests",
