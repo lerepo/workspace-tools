@@ -9,7 +9,7 @@
   },
   "main": "./lib/index.js",
   "bin": {
-    "detct-pm": "./bin/detect-pm"
+    "detect-pm": "./bin/detect-pm"
   },
   "engines": {
     "node": ">=12.18.3"

@@ -2091,7 +2091,7 @@ __metadata:
     "@babel/plugin-proposal-object-rest-spread": ^7.11.0
     "@babel/preset-env": ^7.11.0
     "@babel/preset-typescript": ^7.10.4
-    "@lerepo/web-app": "workspace:^0.0.4"
+    "@lerepo/web-app": "workspace:^0.0.5"
     "@types/jest": ^26.0.10
     "@types/lodash": ^4.14.159
     "@types/node": ^14.6.0
@@ -2140,7 +2140,7 @@ __metadata:
     "@babel/plugin-proposal-object-rest-spread": ^7.11.0
     "@babel/preset-env": ^7.11.0
     "@babel/preset-typescript": ^7.10.4
-    "@lerepo/detect-package-manager": "workspace:^0.0.0"
+    "@lerepo/detect-package-manager": "workspace:^0.1.0"
     "@types/jest": ^26.0.10
     "@types/node": ^14.6.0
     "@types/yup": ^0.29.6
@@ -2155,11 +2155,11 @@ __metadata:
     typescript: 3.9.7
     yup: ^0.29.3
   bin:
-    detct-pm: ./bin/detect-pm
+    detect-pm: ./bin/detect-pm
   languageName: unknown
   linkType: soft
 
-"@lerepo/detect-package-manager@workspace:^0.0.0, @lerepo/detect-package-manager@workspace:packages/detect-pm":
+"@lerepo/detect-package-manager@workspace:^0.1.0, @lerepo/detect-package-manager@workspace:packages/detect-pm":
   version: 0.0.0-use.local
   resolution: "@lerepo/detect-package-manager@workspace:packages/detect-pm"
   dependencies:
@@ -2187,7 +2187,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@lerepo/web-app@workspace:^0.0.4, @lerepo/web-app@workspace:packages/web-app":
+"@lerepo/web-app@workspace:^0.0.5, @lerepo/web-app@workspace:packages/web-app":
   version: 0.0.0-use.local
   resolution: "@lerepo/web-app@workspace:packages/web-app"
   dependencies:
