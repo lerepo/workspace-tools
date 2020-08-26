@@ -17,10 +17,10 @@ The easiest way to invoke the CLI with zero impact on the project is to run it
 through `yarn dlx` or `npx`. For example:
 
 ```shell
-$ yarn dlx -p @lerepo/detect-package-manager detect-pm
+$ yarn dlx -p @lerepo/detect-package-manager-cli detect-pm
 yarn 2.1.1
 
-$ yarn dlx -p @lerepo/detect-package-manager detect-pm --help
+$ yarn dlx -p @lerepo/detect-package-manager-cli detect-pm --help
 Detect installed or used package managers.
 
 Usage:
