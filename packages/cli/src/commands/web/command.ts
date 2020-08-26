@@ -47,7 +47,7 @@ export class WebCommand extends BaseCommand {
 
   @Command.Path('web')
   async execute(): Promise<0 | 1> {
-    this.context.stdout.write('start web server');
+    this.context.stdout.write('Start web server\n');
 
     const listWorkspaces = () => {
       const { stdout } = execa.sync('yarn', ['workspaces', 'list', '--verbose', '--json']);
