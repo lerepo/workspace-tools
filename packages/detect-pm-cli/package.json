@@ -1,6 +1,6 @@
 {
   "name": "@lerepo/detect-package-manager-cli",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "CLI to detect which package manager is being used.",
   "license": "MIT",
   "repository": {
@@ -34,7 +34,7 @@
     "type-check": "tsc --noEmit --incremental false -p tsconfig.app.json"
   },
   "dependencies": {
-    "@lerepo/detect-package-manager": "workspace:^0.1.0",
+    "@lerepo/detect-package-manager": "workspace:^0.1.1",
     "clipanion": "^2.4.4",
     "regenerator-runtime": "^0.13.7",
     "yup": "^0.29.3"

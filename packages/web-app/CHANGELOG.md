@@ -1,5 +1,12 @@
 # @lerepo/web-app
 
+## 0.0.6
+
+### Patch Changes
+
+- 67293d5: chore: use @types/react 16.9.44 (exact) to fix tsc build.
+- b604416: chore: use babel defines across all projects
+
 ## 0.0.5
 
 ### Patch Changes

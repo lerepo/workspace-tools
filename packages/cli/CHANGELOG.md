@@ -1,5 +1,14 @@
 # @lerepo/cli
 
+## 0.0.8
+
+### Patch Changes
+
+- b604416: chore: use babel defines across all projects
+- Updated dependencies [67293d5]
+- Updated dependencies [b604416]
+  - @lerepo/web-app@0.0.6
+
 ## 0.0.7
 
 ### Patch Changes

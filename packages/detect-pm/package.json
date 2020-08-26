@@ -1,6 +1,6 @@
 {
   "name": "@lerepo/detect-package-manager",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Library to detect which package manager is being used.",
   "license": "MIT",
   "repository": {

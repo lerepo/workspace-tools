@@ -1,5 +1,13 @@
 # @lerepo/detect-package-manager-cli
 
+## 0.2.1
+
+### Patch Changes
+
+- b604416: chore: use babel defines across all projects
+- Updated dependencies [b604416]
+  - @lerepo/detect-package-manager@0.1.1
+
 ## 0.2.0
 
 ### Minor Changes

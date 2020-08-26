@@ -1,6 +1,6 @@
 {
   "name": "@lerepo/cli",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Command line interface for the mono-repo workspace collection of tools.",
   "license": "MIT",
   "repository": {
@@ -36,7 +36,7 @@
     "type-check": "yarn tsc --noEmit --incremental false -p tsconfig.app.json"
   },
   "dependencies": {
-    "@lerepo/web-app": "workspace:^0.0.5",
+    "@lerepo/web-app": "workspace:^0.0.6",
     "clipanion": "^2.4.4",
     "execa": "^4.0.3",
     "lodash": "^4.17.20",
