@@ -8,7 +8,7 @@ import ReactDOM from 'react-dom';
 
 import { App } from '~/components/app';
 
-if (!APP_IS_PRODUCTION) {
+if (ENV_IS_PRODUCTION) {
   console.log('Production mode!');
 }
 

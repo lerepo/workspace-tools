@@ -19,7 +19,7 @@ module.exports = (api) => {
         }
       ],
       [
-        'define',
+        'transform-define',
         {
           ENV_IS_PRODUCTION: api.env('production'),
           ENV_IS_DEVELOPMENT: !api.env('production'),

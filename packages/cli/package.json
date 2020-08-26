@@ -16,7 +16,7 @@
     "yarn": ">=2"
   },
   "scripts": {
-    "babel:build": "babel src --out-dir lib --extensions '.ts'",
+    "babel:build": "babel src --out-dir lib --extensions '.ts' --env-name production",
     "babel:watch": "babel src --out-dir lib --extensions '.ts' --watch",
     "build": "yarn babel:build",
     "clean": "rimraf dist build lib",
@@ -32,8 +32,8 @@
     "start": "concurrently \"npm:cli\" \"npm:open\"",
     "test": "jest --passWithNoTests",
     "test:watch": "jest --watch",
-    "tsc:watch": "yarn run type-check --watch",
-    "type-check": "tsc --noEmit --incremental false -p tsconfig.app.json"
+    "tsc:watch": "yarn type-check --watch",
+    "type-check": "yarn tsc --noEmit --incremental false -p tsconfig.app.json"
   },
   "dependencies": {
     "@lerepo/web-app": "workspace:^0.0.5",
@@ -58,11 +58,11 @@
     "babel-loader": "^8.1.0",
     "babel-plugin-import": "^1.13.0",
     "babel-plugin-module-resolver": "^4.0.0",
+    "babel-plugin-transform-define": "^2.0.0",
     "clean-webpack-plugin": "^3.0.0",
     "concurrently": "^5.3.0",
     "copy-webpack-plugin": "^6.0.3",
     "core-js": "^3.6.5",
-    "cross-env": "^7.0.2",
     "dotenv": "^8.2.0",
     "file-loader": "^6.0.0",
     "fork-ts-checker-webpack-plugin": "^5.1.0",

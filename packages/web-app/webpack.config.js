@@ -330,16 +330,6 @@ module.exports = (env, options) => {
     },
     plugins: [
       new CleanWebpackPlugin(),
-      new webpack.DefinePlugin({
-        'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
-        APP_IS_PRODUCTION: JSON.stringify(
-          process.env.NODE_ENV === 'production'
-        ),
-        APP_VERSION: JSON.stringify(require('./package.json').version),
-        SITE_COOKIE_PREFERRED_COLOR_SCHEME:
-          "'yarn-workspaces-analyzer-theme-tone'",
-        DRAWER_WIDTH: 250
-      }),
       new CopyPlugin({
         patterns: [
           {

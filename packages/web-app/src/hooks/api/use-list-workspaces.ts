@@ -38,7 +38,7 @@ const transformResponse = (data: string): Workspace[] => {
 
 export const useListWorkspaces = (): { status: Status; data: Workspace[]; error: unknown } => {
   let result;
-  if (APP_IS_PRODUCTION) {
+  if (ENV_IS_PRODUCTION) {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const options = useMemo<AxiosRequestConfig>(
       () => ({

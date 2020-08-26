@@ -9,5 +9,6 @@
   "prettier.prettierPath": ".yarn/sdks/prettier/index.js",
   "editor.renderIndentGuides": false,
   "editor.formatOnSave": true,
-  "jest.pathToJest": "yarn jest"
+  "jest.pathToJest": "yarn jest",
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 }

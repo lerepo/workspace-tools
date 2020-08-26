@@ -13,6 +13,6 @@ export type AppDrawerContextType =
   | undefined;
 
 export const AppDrawerContext = createContext<AppDrawerContextType>(undefined);
-if (APP_IS_PRODUCTION) {
+if (ENV_IS_PRODUCTION) {
   AppDrawerContext.displayName = 'AppDrawerContext';
 }
