@@ -4,12 +4,14 @@ import * as _ from 'lodash';
 import { WebCommand } from './commands/web/command';
 import { HelpCommand } from './core/help';
 
+import { version } from '../package.json';
+
 export async function main(): Promise<void> {
   async function run(): Promise<void> {
     const cli = Cli.from<CommandContext>([WebCommand, HelpCommand], {
       binaryLabel: `LeRepo Tools`,
       binaryName: `lrt`,
-      binaryVersion: `1.0.0`
+      binaryVersion: version
     });
 
     // Strip global command line options (quiet, silent, colors)
