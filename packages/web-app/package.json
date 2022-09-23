@@ -17,11 +17,9 @@
   },
   "scripts": {
     "_r:clean": "rimraf package && rimraf package.tgz",
-    "_r:prepare": "yarn _r:clean && yarn pack && jaguar -x package.tgz && rimraf package.tgz && rimraf package.tgz",
-    "build": "cross-env NODE_ENV=production webpack --progress",
+    "_r:prepare": "yarn _r:clean && yarn build && yarn pack && jaguar -x package.tgz && rimraf package.tgz",
+    "build": "yarn clean && yarn webpack:quiet",
     "build-storybook": "build-storybook",
-    "build:analyze": "cross-env NODE_ENV=production WITH_BUNDLE_ANALYZER=true webpack",
-    "build:quiet": "cross-env NODE_ENV=production webpack --no-stats",
     "clean": "rimraf dist build",
     "format": "yarn g:format",
     "format:all": "yarn g:format:all",
@@ -30,7 +28,6 @@
     "lint:fix": "run-lint --fix",
     "lint:staged": "yarn g:lint:staged",
     "open": "open-cli http://localhost:3000 -- firefox -devtools",
-    "prepack": "yarn clean && yarn build:quiet",
     "start": "concurrently \"npm:wds:mon\" \"npm:open\"",
     "storybook": "start-storybook -p 6006",
     "test": "jest --passWithNoTests",
@@ -39,7 +36,10 @@
     "tsc:check": "tsc --noEmit -p tsconfig.json",
     "tsc:watch": "yarn run tsc:check --watch",
     "wds": "cross-env NODE_ENV=development webpack-dev-server",
-    "wds:mon": "nodemon --config .nodemon-wds.json"
+    "wds:mon": "nodemon --config .nodemon-wds.json",
+    "webpack": "cross-env NODE_ENV=production webpack --progress",
+    "webpack:analyze": "cross-env NODE_ENV=production WITH_BUNDLE_ANALYZER=true webpack",
+    "webpack:quiet": "cross-env NODE_ENV=production webpack --no-stats"
   },
   "dependencies": {
     "@fontsource/roboto": "^4.5.8",
