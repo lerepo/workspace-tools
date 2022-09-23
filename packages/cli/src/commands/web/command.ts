@@ -1,4 +1,4 @@
-import { execaSync } from 'execa';
+import childProcess from 'child_process';
 import * as t from 'typanion';
 import { Command, Option, Usage } from 'clipanion';
 import { BaseCommand } from '../../core';
@@ -58,13 +58,10 @@ export class WebCommand extends BaseCommand {
     this.context.stdout.write('Start web server\n');
 
     const listWorkspaces = () => {
-      const { stdout } = execaSync('yarn', [
-        'workspaces',
-        'list',
-        '--verbose',
-        '--json'
-      ]);
-      return stdout;
+      const stdout = childProcess.execSync(
+        'yarn workspaces list --verbose --json'
+      );
+      return stdout.toString('utf-8');
     };
 
     const depsApiHandler: ApiHandler = (path, query, resultHandler) => {

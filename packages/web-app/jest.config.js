@@ -1,10 +1,8 @@
 module.exports = {
-  modulePathIgnorePatterns: ['build/.*'],
-
   // Jest transformations -- this adds support for TypeScript
   // using ts-jest
   transform: {
-    '^.+\\.tsx?$': 'babel-jest'
+    '\\.[jt]sx?$': '../../tools/babel-jest/monorepo-transformer.js'
   },
 
   // Runs special logic, such as cleaning up components
@@ -19,6 +17,8 @@ module.exports = {
   // Matches parent folder `__tests__` and filename
   // should contain `test` or `spec`.
   testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$',
+
+  modulePathIgnorePatterns: ['lib', 'build', 'dist'],
 
   // Module file extensions for importing
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],

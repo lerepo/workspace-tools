@@ -2977,7 +2977,7 @@ __metadata:
 
 "@lerepo/cli@file:./packages/cli::locator=%40lerepo%2Fworkspace-tools%40workspace%3A.":
   version: 0.0.8
-  resolution: "@lerepo/cli@file:./packages/cli#./packages/cli::hash=f193d0&locator=%40lerepo%2Fworkspace-tools%40workspace%3A."
+  resolution: "@lerepo/cli@file:./packages/cli#./packages/cli::hash=07aeea&locator=%40lerepo%2Fworkspace-tools%40workspace%3A."
   dependencies:
     "@lerepo/web-app": "workspace:^0.0.6"
     clipanion: ^3.1.0
@@ -2987,7 +2987,7 @@ __metadata:
     typanion: ^3.12.0
   bin:
     lrt: ./bin/lrt
-  checksum: 4d345daed945dccfb08a3efb8fcd70de7853bfd7d6e0e3bf42f5b7e7d9d4cd61e50fe99a33c6e97fb6e9998091daa16a86db761862819f16292aeefaeee5f626
+  checksum: bfeffef871fb22c89872aaace17313f37caf398ab10e9448b61e30e1b945295b0e8012a50b574d2ac04235cc09a4beef2feb2b409061c8d59196f03f63fcf9f4
   languageName: node
   linkType: hard
 
@@ -3024,6 +3024,7 @@ __metadata:
     nodemon: ^2.0.20
     open-cli: ^7.0.1
     pnp-webpack-plugin: ^1.7.0
+    prettier: ^2.7.1
     prettier-plugin-package: ^1.3.0
     regenerator-runtime: ^0.13.9
     rimraf: ^3.0.2
@@ -3040,9 +3041,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@lerepo/detect-package-manager-cli@workspace:packages/detect-pm-cli":
+"@lerepo/detect-pm-cli@workspace:packages/detect-pm-cli":
   version: 0.0.0-use.local
-  resolution: "@lerepo/detect-package-manager-cli@workspace:packages/detect-pm-cli"
+  resolution: "@lerepo/detect-pm-cli@workspace:packages/detect-pm-cli"
   dependencies:
     "@babel/cli": 7.18.10
     "@babel/core": ^7.19.1
@@ -3051,7 +3052,7 @@ __metadata:
     "@babel/plugin-proposal-object-rest-spread": ^7.18.9
     "@babel/preset-env": ^7.19.1
     "@babel/preset-typescript": ^7.18.6
-    "@lerepo/detect-package-manager": "workspace:^0.1.1"
+    "@lerepo/detect-pm": "workspace:*"
     "@types/jest": ^29.0.3
     "@types/node": ^18.7.18
     babel-plugin-import: ^1.13.5
@@ -3060,6 +3061,7 @@ __metadata:
     clipanion: ^3.1.0
     core-js: ^3.25.2
     jest: ^29.0.3
+    prettier: ^2.7.1
     prettier-plugin-package: ^1.3.0
     regenerator-runtime: ^0.13.9
     rimraf: ^3.0.2
@@ -3070,9 +3072,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@lerepo/detect-package-manager@workspace:^0.1.1, @lerepo/detect-package-manager@workspace:packages/detect-pm":
+"@lerepo/detect-pm@workspace:*, @lerepo/detect-pm@workspace:packages/detect-pm":
   version: 0.0.0-use.local
-  resolution: "@lerepo/detect-package-manager@workspace:packages/detect-pm"
+  resolution: "@lerepo/detect-pm@workspace:packages/detect-pm"
   dependencies:
     "@babel/cli": 7.18.10
     "@babel/core": ^7.19.1
@@ -3082,15 +3084,15 @@ __metadata:
     "@babel/preset-env": ^7.19.1
     "@babel/preset-typescript": ^7.18.6
     "@types/jest": ^29.0.3
-    "@types/node": ^18.7.18
+    "@types/node": ^16
     "@types/semver": ^7.3.12
     babel-plugin-import: ^1.13.5
     babel-plugin-module-resolver: ^4.1.0
     babel-plugin-transform-define: ^2.1.0
     core-js: ^3.25.2
-    execa: ^6.1.0
     jest: ^29.0.3
     lodash: ^4.17.21
+    prettier: ^2.7.1
     prettier-plugin-package: ^1.3.0
     regenerator-runtime: ^0.13.9
     rimraf: ^3.0.2
@@ -3101,7 +3103,7 @@ __metadata:
 
 "@lerepo/web-app@file:./packages/web-app::locator=%40lerepo%2Fworkspace-tools%40workspace%3A.":
   version: 0.0.6
-  resolution: "@lerepo/web-app@file:./packages/web-app#./packages/web-app::hash=f12961&locator=%40lerepo%2Fworkspace-tools%40workspace%3A."
+  resolution: "@lerepo/web-app@file:./packages/web-app#./packages/web-app::hash=befff8&locator=%40lerepo%2Fworkspace-tools%40workspace%3A."
   dependencies:
     "@fontsource/roboto": ^4.5.8
     "@material-ui/core": ^4.12.4
@@ -3113,7 +3115,7 @@ __metadata:
     react-force-graph-2d: ^1.23.11
     react-router-dom: ^6.4.1
     require-from-string: ^2.0.2
-  checksum: 4aa5edae1225b89ac4266a10e43f9f3222daaae9aac00a7d9a8f17ac921905152216e0840fe3014f3c0e899b38c21212a0c609b50703c492e39658c58b43e02b
+  checksum: fb97fc00af0ae1affea8ba20233ca42f46ed42b5e3631d93ebaf11f55f2b9783f2e9fda45d7e0e0beb4031704160ac0cf4fc85d8f2c2a18b80b6ad6ca6a05335
   languageName: node
   linkType: hard
 
@@ -3175,6 +3177,7 @@ __metadata:
     postcss-loader: ^7.0.1
     postcss-normalize: ^10.0.1
     postcss-preset-env: ^7.8.2
+    prettier: ^2.7.1
     prettier-plugin-package: ^1.3.0
     react: ^17
     react-dom: ^17
@@ -3204,6 +3207,14 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@lerepo/workspace-tools@workspace:."
   dependencies:
+    "@babel/core": ^7.19.1
+    "@babel/plugin-proposal-class-properties": ^7.18.6
+    "@babel/plugin-proposal-object-rest-spread": ^7.18.9
+    "@babel/plugin-proposal-optional-chaining": ^7.18.9
+    "@babel/preset-env": ^7.19.1
+    "@babel/preset-react": ^7.18.6
+    "@babel/preset-typescript": ^7.18.6
+    "@babel/runtime": ^7.19.0
     "@changesets/cli": ^2.24.4
     "@commitlint/cli": ^17.1.2
     "@commitlint/config-conventional": ^17.1.0
@@ -3213,6 +3224,9 @@ __metadata:
     "@types/node": ^18.7.18
     "@typescript-eslint/eslint-plugin": ^5.38.0
     "@typescript-eslint/parser": ^5.38.0
+    babel-jest: ^29.0.3
+    babel-plugin-module-resolver: ^4.1.0
+    babel-plugin-transform-define: ^2.1.0
     eslint: ^8.23.1
     eslint-config-prettier: ^8.5.0
     eslint-plugin-editorconfig: ^4.0.2
@@ -5165,7 +5179,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^14.0.10 || ^16.0.0, @types/node@npm:^14.14.20 || ^16.0.0":
+"@types/node@npm:^14.0.10 || ^16.0.0, @types/node@npm:^14.14.20 || ^16.0.0, @types/node@npm:^16":
   version: 16.11.59
   resolution: "@types/node@npm:16.11.59"
   checksum: b3a2986ef8f8216bb7fd1187dcf2e69aca3e6b6b5fdfd6abf4cf11c44e3cdd587fae875a28dc4ef257e2b369e2c5290642aff6a0a9d702f3385a78f561293259

@@ -1,4 +1,4 @@
-import { execa } from 'execa';
+import childProcess from 'child_process';
 import semver from 'semver';
 
 import { PackageManager, PackageManagerName } from '~/package-manager';
@@ -16,14 +16,18 @@ export class InstalledPackageManagerLocator implements PackageManager {
   get workspaces(): boolean {
     return (
       this._version !== null &&
-      (this.name === 'yarn' || (this.name === 'pnpm' && semver.gte(this._version, '3.7.0')))
+      (this.name === 'yarn' ||
+        (this.name === 'pnpm' && semver.gte(this._version, '3.7.0')))
     );
   }
   get version(): string {
     if (this._detectionDone) {
       if (this._version !== null) return this._version;
       else throw new Error(`${this.name} is not installed`);
-    } else throw new Error(`call detect() before accessing the PackageManager version`);
+    } else
+      throw new Error(
+        `call detect() before accessing the PackageManager version`
+      );
   }
 
   /**
@@ -36,8 +40,10 @@ export class InstalledPackageManagerLocator implements PackageManager {
     if (!this._detectionDone) {
       try {
         this._detectionDone = true;
-        const { stdout } = await execa(this.name, ['--version']);
-        this._version = semver.clean(stdout);
+        const stdout = childProcess.execSync(`${this.name} --version`, {
+          stdio: 'pipe'
+        });
+        this._version = semver.clean(stdout.toString('utf8'));
         if (this._version === null)
           this._error = `command '${this.name} --version' produced output '${stdout}, which is not a valid semantic version`;
       } catch (error) {
@@ -48,7 +54,9 @@ export class InstalledPackageManagerLocator implements PackageManager {
   }
 }
 
-export const has = async (name: PackageManagerName): Promise<PackageManager | null> => {
+export const has = async (
+  name: PackageManagerName
+): Promise<PackageManager | null> => {
   const pm = new InstalledPackageManagerLocator(name);
   await pm.detect();
   if (!pm.error) return pm;

@@ -2,6 +2,18 @@ import * as fs from 'fs';
 import * as ppath from 'path';
 import { Manifest } from './manifest';
 
+/**
+ * A typeguarded version of `instanceof Error` for NodeJS.
+ * @author Joseph JDBar Barron
+ * @link https://dev.to/jdbar
+ */
+export function instanceOfNodeError<T extends new (...args: any) => Error>(
+  value: Error,
+  errorType: T
+): value is InstanceType<T> & NodeJS.ErrnoException {
+  return value instanceof errorType;
+}
+
 export const findManifestInDirectory = (directory: string): Manifest | null => {
   const path = ppath.resolve(directory, 'package.json');
   try {
@@ -12,9 +24,16 @@ export const findManifestInDirectory = (directory: string): Manifest | null => {
       return manifest as Manifest;
     }
   } catch (error) {
-    if (ENV_IS_DEVELOPMENT && !ENV_IS_UNIT_TESTING && error instanceof ErrnoException) {
+    if (
+      ENV_IS_DEVELOPMENT &&
+      !ENV_IS_UNIT_TESTING &&
+      error instanceof Error &&
+      instanceOfNodeError(error, TypeError)
+    ) {
       if (error.code !== 'ENOENT')
-        console.warn(`attempt to read manifest at ${path} failed: ${error.message}`);
+        console.warn(
+          `attempt to read manifest at ${path} failed: ${error.message}`
+        );
     }
   }
   return null;
@@ -26,11 +45,16 @@ const PACKAGE_MANAGERS_FILES = {
   yarn: ['yarn.lock', '.yarnrc.yml']
 };
 
-export const checkPackageManagerFiles = (directory: string, pm: string): boolean => {
+export const checkPackageManagerFiles = (
+  directory: string,
+  pm: string
+): boolean => {
   // If pm name is not known, bailout quickly
   if (!Object.keys(PACKAGE_MANAGERS_FILES).includes(pm)) {
     if (ENV_IS_DEVELOPMENT && !ENV_IS_UNIT_TESTING) {
-      console.trace(`checking signature files for an unknown package manager '${pm}'`);
+      console.trace(
+        `checking signature files for an unknown package manager '${pm}'`
+      );
     }
     return false;
   }

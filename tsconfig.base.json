@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "target": "es2015",
-    "lib": ["es2020", "dom", "esnext"],
-    "module": "esnext",
+    "target": "esnext",
+    "module": "commonjs",
+    "lib": ["es2021"],
     "moduleResolution": "node",
     "esModuleInterop": true,
     "resolveJsonModule": true,
@@ -40,7 +40,8 @@
     "strictBindCallApply": true,
     "strictFunctionTypes": false,
     "strictNullChecks": true,
-    "strictPropertyInitialization": true
+    "strictPropertyInitialization": true,
+    "declaration": true
   },
   "exclude": ["node_modules", "dist"],
   "references": [

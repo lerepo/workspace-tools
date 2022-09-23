@@ -1,25 +1,19 @@
 {
   "extends": "../../tsconfig.base.json",
+  "files": [],
+  "include": ["src/**/*.ts"],
   "compilerOptions": {
-    "outDir": "./build/out-tsc",
-    "declaration": false,
-    // Setting this to true will cause errors with React import.
-    // We rely on linting to detect these cases and eventually just ignore
-    // linting error for the React import.
-    "noUnusedLocals": false,
+    "types": ["jest", "node"],
+    "composite": true,
+    "outDir": "./lib",
+    // We're using babel for compilation of typescript and tsc only for types
+    // Ensure that .d.ts files are created by tsc, but not .js files
+    "declaration": true,
+    // Ensure that Babel can safely transpile files in the TypeScript project
+    "isolatedModules": true,
     "baseUrl": "src",
     "paths": {
       "~/*": ["*"]
     }
-  },
-  "files": [],
-  "include": [],
-  "references": [
-    {
-      "path": "./tsconfig.lib.json"
-    },
-    {
-      "path": "./tsconfig.spec.json"
-    }
-  ]
+  }
 }

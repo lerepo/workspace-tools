@@ -5,14 +5,16 @@ import {
   detectPackageManagers,
   detectInstalledPackageManagers,
   PackageManager
-} from '@lerepo/detect-package-manager';
+} from '@lerepo/detect-pm';
 import { VersionCommand } from 'clipanion/lib/advanced/builtins';
 
 export class HelpCommand extends Command {
   static paths = [[`help`, `--help`, `-h`]];
 
   async execute(): Promise<0 | 1> {
-    this.context.stdout.write(this.cli.usage(DefaultCommand, { detailed: true }));
+    this.context.stdout.write(
+      this.cli.usage(DefaultCommand, { detailed: true })
+    );
     return Promise.resolve(0);
   }
 }

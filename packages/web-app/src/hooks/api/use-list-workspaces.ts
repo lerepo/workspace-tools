@@ -1,5 +1,5 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import React, { useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import { useAsyncApi, Status } from './use-async-api';
 import axios, { AxiosRequestTransformer, AxiosRequestConfig } from 'axios';
 import * as _ from 'lodash';
@@ -36,7 +36,11 @@ const transformResponse = (data: string): Workspace[] => {
   return _.sortBy(workspaces, 'location');
 };
 
-export const useListWorkspaces = (): { status: Status; data: Workspace[]; error: unknown } => {
+export const useListWorkspaces = (): {
+  status: Status;
+  data: Workspace[];
+  error: unknown;
+} => {
   let result;
   if (ENV_IS_PRODUCTION) {
     // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -60,5 +64,9 @@ export const useListWorkspaces = (): { status: Status; data: Workspace[]; error:
       error: undefined
     });
   }
-  return { status: result.status as Status, data: result.data as Workspace[], error: result.error };
+  return {
+    status: result.status as Status,
+    data: result.data as Workspace[],
+    error: result.error
+  };
 };

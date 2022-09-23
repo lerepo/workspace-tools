@@ -188,6 +188,7 @@ module.exports = (env, options) => {
               exclude: /node_modules/,
               loader: 'babel-loader',
               options: {
+                rootMode: 'upward',
                 // Enables caching results in ./node_modules/.cache/babel-loader/
                 // directory for faster rebuilds.
                 cacheDirectory: true,

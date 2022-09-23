@@ -1,5 +1,5 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import React, { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import axios, { AxiosRequestConfig } from 'axios';
 
 export type Status = 'idle' | 'pending' | 'success' | 'error';
@@ -8,7 +8,12 @@ export const useAsyncApi = (
   url: string,
   options?: AxiosRequestConfig,
   immediate = true
-): { execute: () => Promise<void>; status: Status; data: unknown; error: unknown } => {
+): {
+  execute: () => Promise<void>;
+  status: Status;
+  data: unknown;
+  error: unknown;
+} => {
   const [status, setStatus] = useState<Status>('idle');
   const [data, setData] = useState(null);
   const [error, setError] = useState<unknown | null>(null);

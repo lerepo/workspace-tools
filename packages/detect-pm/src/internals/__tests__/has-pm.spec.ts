@@ -1,38 +1,34 @@
-import { execa, ExecaReturnValue, ExecaChildProcess } from 'execa';
-import semver from 'semver';
+import childProcess from 'child_process';
 
-jest.mock('execa');
+import semver from 'semver';
 jest.mock('semver');
-const mockedExeca = <jest.MockedFunction<typeof execa>>execa;
-const mockedSemverClean = <jest.MockedFunction<typeof semver.clean>>semver.clean;
+const mockedSemverClean = <jest.MockedFunction<typeof semver.clean>>(
+  semver.clean
+);
 
 import { InstalledPackageManagerLocator, has } from '~/internals/has-pm';
 
-function execaSuccessResult(stdout: string): ExecaReturnValue<Buffer> | ExecaChildProcess<Buffer> {
-  return {
-    escapedCommand: '__not_important__',
-    command: '__not_important__',
-    exitCode: 0,
-    stdout: <Buffer>(<unknown>stdout),
-    stderr: <Buffer>(<unknown>''),
-    all: undefined,
-    failed: false,
-    timedOut: false,
-    isCanceled: false,
-    killed: false
-  };
-}
-
 describe('PackageManagerLocator', () => {
+  let execfs;
+
+  beforeEach(() => {
+    execfs = jest.spyOn(childProcess, 'execSync');
+  });
+
+  afterEach(() => {
+    execfs.mockRestore();
+  });
+
   it('should throw if version is accessed before detect', () => {
     const pm = new InstalledPackageManagerLocator('npm');
     expect(() => pm.version).toThrow(/call detect()/);
   });
   it('should detect package manager', async () => {
     const pm = new InstalledPackageManagerLocator('npm');
-    mockedExeca.mockResolvedValue(execaSuccessResult('1.2.3'));
+    execfs.mockReturnValue('1.2.3');
     mockedSemverClean.mockReturnValue('1.2.3');
     await pm.detect();
+    expect(execfs).toHaveBeenCalledTimes(1);
     expect(pm.name).toEqual('npm');
     expect(pm.version).toEqual('1.2.3');
     expect(pm.error).toBeNull();
@@ -40,19 +36,21 @@ describe('PackageManagerLocator', () => {
 
   it('should have an error when pm is not installed', async () => {
     const pm = new InstalledPackageManagerLocator('npm');
-    mockedExeca.mockImplementationOnce(() => {
+    execfs.mockImplementationOnce(() => {
       throw new Error('not found');
     });
     await pm.detect();
+    expect(execfs).toHaveBeenCalledTimes(1);
     expect(pm.error).toMatch(/not found/);
     expect(() => pm.version).toThrow(/not installed/);
   });
 
   it('should have an error when pm does not return semantic version number', async () => {
     const pm = new InstalledPackageManagerLocator('npm');
-    mockedExeca.mockResolvedValue(execaSuccessResult('testing version'));
+    execfs.mockReturnValue('testing version');
     mockedSemverClean.mockReturnValue(null);
     await pm.detect();
+    expect(execfs).toHaveBeenCalledTimes(1);
     expect(pm.error).toMatch(/not a valid semantic version/);
     expect(() => pm.version).toThrow(/not installed/);
   });
@@ -63,7 +61,11 @@ describe('has', () => {
   let mockError;
   beforeAll(() => {
     mockDetect = jest.spyOn(InstalledPackageManagerLocator.prototype, 'detect');
-    mockError = jest.spyOn(InstalledPackageManagerLocator.prototype, 'error', 'get');
+    mockError = jest.spyOn(
+      InstalledPackageManagerLocator.prototype,
+      'error',
+      'get'
+    );
   });
 
   afterAll(() => {

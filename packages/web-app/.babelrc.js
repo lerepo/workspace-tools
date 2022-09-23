@@ -3,20 +3,7 @@ module.exports = (api) => {
   api.cache.using(() => process.env.NODE_ENV);
   return {
     presets: ['@babel/env', '@babel/typescript', '@babel/react'],
-    ignore: api.env('test')
-      ? []
-      : ['**/__tests__', '**/__mocks__', '**/*.spec.ts', 'src/test-setup.ts'],
     plugins: [
-      [
-        'module-resolver',
-        {
-          extensions: ['.js', '.es', '.es6', '.mjs', '.ts', '.tsx', '.png'],
-          root: ['./src'],
-          alias: {
-            '~': './src'
-          }
-        }
-      ],
       [
         'transform-define',
         {
@@ -31,8 +18,6 @@ module.exports = (api) => {
       ],
       // Enable tree-shaking for @blueprintjs/core
       // ['import', { libraryName: '@blueprintjs/core', libraryDirectory: 'lib/esm/components' }],
-      '@babel/proposal-class-properties',
-      '@babel/proposal-object-rest-spread',
       '@babel/plugin-proposal-optional-chaining'
     ].filter(Boolean)
   };
