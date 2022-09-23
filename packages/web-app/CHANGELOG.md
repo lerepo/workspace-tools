@@ -1,5 +1,11 @@
 # @lerepo/web-app
 
+## 0.2.1
+
+### Patch Changes
+
+- Reformatted code for consistent style.
+
 ## 0.2.0
 
 ### Minor Changes

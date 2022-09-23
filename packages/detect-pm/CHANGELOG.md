@@ -1,5 +1,11 @@
 # @lerepo/detect-package-manager
 
+## 0.3.1
+
+### Patch Changes
+
+- Reformatted code for consistent style.
+
 ## 0.3.0
 
 ### Minor Changes

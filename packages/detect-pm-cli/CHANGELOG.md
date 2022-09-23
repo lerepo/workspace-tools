@@ -1,5 +1,13 @@
 # @lerepo/detect-package-manager-cli
 
+## 0.4.1
+
+### Patch Changes
+
+- Reformatted code for consistent style.
+- Updated dependencies
+  - @lerepo/detect-pm@0.3.1
+
 ## 0.4.0
 
 ### Minor Changes

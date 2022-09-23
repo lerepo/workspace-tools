@@ -1,6 +1,6 @@
 {
   "name": "@lerepo/cli",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "publishConfig": {
     "access": "public",
     "directory": "package"
@@ -41,7 +41,7 @@
     "tsc:watch": "yarn run tsc:check --watch"
   },
   "dependencies": {
-    "@lerepo/web-app": "workspace:^0.2.0",
+    "@lerepo/web-app": "workspace:^0.2.1",
     "clipanion": "^3.1.0",
     "execa": "^6.1.0",
     "lodash": "^4.17.21",

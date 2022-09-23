@@ -1,5 +1,13 @@
 # @lerepo/cli
 
+## 0.2.1
+
+### Patch Changes
+
+- Reformatted code for consistent style.
+- Updated dependencies
+  - @lerepo/web-app@0.2.1
+
 ## 0.2.0
 
 ### Minor Changes
