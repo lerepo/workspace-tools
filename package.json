@@ -25,6 +25,8 @@
     "@changesets/cli": "^2.24.4",
     "@commitlint/cli": "^17.1.2",
     "@commitlint/config-conventional": "^17.1.0",
+    "@lerepo/cli": "file:./packages/cli",
+    "@lerepo/web-app": "file:./packages/web-app",
     "@types/jest": "^29.0.3",
     "@types/node": "^18.7.18",
     "@typescript-eslint/eslint-plugin": "^5.38.0",
