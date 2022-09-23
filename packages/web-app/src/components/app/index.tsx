@@ -1,5 +1,5 @@
 import React from 'react';
-import { Redirect, Route, BrowserRouter as Router, Switch } from 'react-router-dom';
+import { Navigate, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 
 import { CssBaseline, ThemeProvider } from '@material-ui/core';
 import { styled } from '@material-ui/core/styles';
@@ -59,24 +59,11 @@ export const App: React.FC = () => {
             <AppDrawer />
             <AppHeader toggleDarkMode={toggleDarkMode} />
             <Main>
-              <Switch>
-                <Route
-                  exact
-                  path="/explore"
-                  render={(routeProps) => <ExplorePage {...routeProps} />}
-                />
-                <Route
-                  exact
-                  path="/visualize"
-                  render={(routeProps) => <VisualizePage {...routeProps} />}
-                />
-                <Route
-                  exact
-                  path="/analyze"
-                  render={(routeProps) => <AnalyzePage {...routeProps} />}
-                />
-                <Redirect to="/visualize" />
-              </Switch>
+              <Routes>
+                <Route path="/explore" element={<ExplorePage />} />
+                <Route path="/visualize" element={<VisualizePage />} />
+                <Route path="/analyze" element={<AnalyzePage />} />
+              </Routes>
             </Main>
           </Root>
         </AppDrawerProvider>

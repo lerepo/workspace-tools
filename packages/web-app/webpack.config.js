@@ -12,8 +12,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 const PnpWebpackPlugin = require('pnp-webpack-plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
-  .BundleAnalyzerPlugin;
+const BundleAnalyzerPlugin =
+  require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = (env, options) => {
   const isEnvDevelopment = process.env.NODE_ENV === 'development';
@@ -55,23 +55,25 @@ module.exports = (env, options) => {
         // package.json
         loader: 'postcss-loader',
         options: {
-          // Necessary for external CSS imports to work
-          // https://github.com/facebook/create-react-app/issues/2677
-          ident: 'postcss',
-          plugins: () => [
-            require('postcss-flexbugs-fixes'),
-            require('postcss-preset-env')({
-              autoprefixer: {
-                flexbox: 'no-2009'
-              },
-              stage: 3
-            }),
-            // Adds PostCSS Normalize as the reset css with default options,
-            // so that it honors browserslist config in package.json
-            // which in turn let's users customize the target behavior as per their needs.
-            require('postcss-normalize')
-          ],
-          sourceMap: isEnvProduction && shouldUseSourceMap
+          postcssOptions: {
+            // Necessary for external CSS imports to work
+            // https://github.com/facebook/create-react-app/issues/2677
+            ident: 'postcss',
+            plugins: () => [
+              require('postcss-flexbugs-fixes'),
+              require('postcss-preset-env')({
+                autoprefixer: {
+                  flexbox: 'no-2009'
+                },
+                stage: 3
+              }),
+              // Adds PostCSS Normalize as the reset css with default options,
+              // so that it honors browserslist config in package.json
+              // which in turn let's users customize the target behavior as per their needs.
+              require('postcss-normalize')
+            ],
+            sourceMap: isEnvProduction && shouldUseSourceMap
+          }
         }
       }
     ].filter(Boolean);
@@ -133,9 +135,7 @@ module.exports = (env, options) => {
       : isEnvDevelopment && 'cheap-module-source-map',
 
     devServer: {
-      stats: 'minimal',
       port: 3000,
-      inline: true,
       historyApiFallback: true,
       hot: true,
       // Send API requests on localhost to API server get around CORS.
@@ -161,6 +161,12 @@ module.exports = (env, options) => {
 
     module: {
       rules: [
+        // Fix: BREAKING CHANGE: The request './objectWithoutPropertiesLoose'
+        // failed to resolve only because it was resolved as fully specified
+        {
+          test: /\.m?js/,
+          resolve: { fullySpecified: false }
+        },
         {
           // "oneOf" will traverse all following loaders until one will
           // match the requirements. When no loader matches it will fall
@@ -314,8 +320,7 @@ module.exports = (env, options) => {
               // https://github.com/facebook/create-react-app/issues/2488
               ascii_only: true
             }
-          },
-          sourceMap: shouldUseSourceMap
+          }
         })
       ],
       // Automatically split vendor and commons
@@ -372,7 +377,6 @@ module.exports = (env, options) => {
           ? 'static/css/[id].css'
           : 'static/css/[id].[contenthash:8].css'
       }),
-      isEnvDevelopment && new webpack.NamedModulesPlugin(),
       isEnvDevelopment && new ReactRefreshWebpackPlugin(),
       useBundleAnalyzer && new BundleAnalyzerPlugin()
     ].filter(Boolean)

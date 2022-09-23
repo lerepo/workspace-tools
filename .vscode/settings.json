@@ -7,8 +7,12 @@
     100
   ],
   "prettier.prettierPath": ".yarn/sdks/prettier/index.js",
-  "editor.renderIndentGuides": false,
   "editor.formatOnSave": true,
-  "jest.pathToJest": "yarn jest",
-  "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "jest.jestCommandLine": "yarn jest",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.guides.indentation": false,
+  "search.exclude": {
+    "**/.yarn": true,
+    "**/.pnp.*": true
+  }
 }

@@ -24,7 +24,7 @@ export const ForceGraph: React.FC<{ data: Workspace[]; selection: string[] }> = 
   selection
 }) => {
   const drawer = useAppDrawer();
-  const fgRef = useRef<typeof ForceGraph2D>();
+  const fgRef = useRef();
 
   const NODE_R = 4;
 
@@ -144,7 +144,6 @@ export const ForceGraph: React.FC<{ data: Workspace[]; selection: string[] }> = 
     <ForceGraph2D
       ref={fgRef}
       cooldownTicks={100}
-      onEngineStop={() => fgRef.current.zoomToFit(400)}
       width={width}
       height={height}
       graphData={graphData}
@@ -156,7 +155,6 @@ export const ForceGraph: React.FC<{ data: Workspace[]; selection: string[] }> = 
       linkWidth={(link) => (highlightLinks.has(link) ? 5 : 1)}
       linkDirectionalParticles={4}
       linkDirectionalParticleWidth={(link) => (highlightLinks.has(link) ? 4 : 0)}
-      nodeCanvasObjectMode={(node) => (highlightNodes.has(node) ? 'before' : undefined)}
       nodeCanvasObject={paintRing}
       onNodeHover={handleNodeHover}
     />

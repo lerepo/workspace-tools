@@ -11,7 +11,7 @@ export const useAsyncApi = (
 ): { execute: () => Promise<void>; status: Status; data: unknown; error: unknown } => {
   const [status, setStatus] = useState<Status>('idle');
   const [data, setData] = useState(null);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState<unknown | null>(null);
 
   // The execute function wraps axios and
   // handles setting state for pending, value, and error.

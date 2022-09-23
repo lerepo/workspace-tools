@@ -1,7 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import React, { useMemo, useState } from 'react';
 import { useAsyncApi, Status } from './use-async-api';
-import axios, { AxiosTransformer, AxiosRequestConfig } from 'axios';
+import axios, { AxiosRequestTransformer, AxiosRequestConfig } from 'axios';
 import * as _ from 'lodash';
 import { Workspace } from '~/model/workspace';
 import { TEST_DATA } from './test-data';
@@ -45,7 +45,7 @@ export const useListWorkspaces = (): { status: Status; data: Workspace[]; error:
         responseType: 'text',
         transformResponse: [
           transformResponse,
-          ...(axios.defaults.transformResponse as AxiosTransformer[])
+          ...(axios.defaults.transformResponse as AxiosRequestTransformer[])
         ]
       }),
       []
