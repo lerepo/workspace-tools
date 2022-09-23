@@ -13,10 +13,12 @@ describe('detectInstalledPackageManagers', () => {
   it('should check for all known package managers', async () => {
     const known = ['npm', 'pnpm', 'yarn'];
     const calledWith: string[] = [];
-    mockedHas.mockImplementation(async (name: string): Promise<PackageManager | null> => {
-      calledWith.push(name);
-      return null;
-    });
+    mockedHas.mockImplementation(
+      async (name: string): Promise<PackageManager | null> => {
+        calledWith.push(name);
+        return null;
+      }
+    );
     await detectInstalledPackageManagers();
     expect(mockedHas).toHaveBeenCalledTimes(3);
     known.map((pm) => {
@@ -25,15 +27,17 @@ describe('detectInstalledPackageManagers', () => {
   });
 
   it('should only return found package managers', async () => {
-    mockedHas.mockImplementation(async (name: string): Promise<PackageManager | null> => {
-      return name === 'yarn'
-        ? {
-            name: 'yarn',
-            version: '2.1.1',
-            workspaces: true
-          }
-        : null;
-    });
+    mockedHas.mockImplementation(
+      async (name: string): Promise<PackageManager | null> => {
+        return name === 'yarn'
+          ? {
+              name: 'yarn',
+              version: '2.1.1',
+              workspaces: true
+            }
+          : null;
+      }
+    );
     const found = await detectInstalledPackageManagers();
     expect(mockedHas).toHaveBeenCalledTimes(3);
     expect(found.length).toEqual(1);

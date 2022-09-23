@@ -30,9 +30,11 @@ export const detectPackageManagers = async (
     'npm'
   ]);
 
-  let found = findPackageManagerFromManifest(cwd, installedPackageManagers) || [];
+  let found =
+    findPackageManagerFromManifest(cwd, installedPackageManagers) || [];
   if (found.length === 0) {
-    found = findPackageManagerFromSignatureFiles(cwd, installedPackageManagers) || [];
+    found =
+      findPackageManagerFromSignatureFiles(cwd, installedPackageManagers) || [];
   }
 
   if (found.length === 0) {

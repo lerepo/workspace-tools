@@ -75,13 +75,15 @@ describe('detectPackageManagers', () => {
   });
 
   it('should detect package manager from parent directory', async () => {
-    mockFindPackageManagerFromManifest.mockReturnValueOnce([]).mockReturnValueOnce([
-      {
-        name: 'yarn',
-        version: '2.1.1',
-        workspaces: true
-      }
-    ]);
+    mockFindPackageManagerFromManifest
+      .mockReturnValueOnce([])
+      .mockReturnValueOnce([
+        {
+          name: 'yarn',
+          version: '2.1.1',
+          workspaces: true
+        }
+      ]);
     const found = await detectPackageManagers({ cwd: '/project/workspace' });
     expect(mockFindPackageManagerFromManifest).toHaveBeenCalled();
     expect(found).toBeDefined();
@@ -94,7 +96,9 @@ describe('detectPackageManagers', () => {
 
   it('should stop detection if it reaches the root with no pm detected', async () => {
     mockFindPackageManagerFromManifest.mockReturnValue([]);
-    const found = await detectPackageManagers({ cwd: '/root/project/packages/workspace' });
+    const found = await detectPackageManagers({
+      cwd: '/root/project/packages/workspace'
+    });
     expect(mockFindPackageManagerFromManifest).toHaveBeenCalled();
     expect(found).toBeNull();
   });

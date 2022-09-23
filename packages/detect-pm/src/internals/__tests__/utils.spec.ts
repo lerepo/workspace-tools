@@ -1,9 +1,16 @@
 jest.mock('fs');
 import * as fs from 'fs';
-const mockedReadFileSync = <jest.MockedFunction<typeof fs.readFileSync>>fs.readFileSync;
-const mockedExistsSync = <jest.MockedFunction<typeof fs.existsSync>>fs.existsSync;
+const mockedReadFileSync = <jest.MockedFunction<typeof fs.readFileSync>>(
+  fs.readFileSync
+);
+const mockedExistsSync = <jest.MockedFunction<typeof fs.existsSync>>(
+  fs.existsSync
+);
 
-import { findManifestInDirectory, checkPackageManagerFiles } from '~/internals/utils';
+import {
+  findManifestInDirectory,
+  checkPackageManagerFiles
+} from '~/internals/utils';
 
 describe('findManifestInDirectory', () => {
   it('should return manifest content when found', () => {
@@ -70,7 +77,9 @@ describe('checkPackageManagerFiles', () => {
 
   it('should detect pnpm signature files', () => {
     mockedExistsSync.mockImplementation((path: string) => {
-      return path.match(/(pnpm-lock\.yaml|pnpm-workspaces\.yaml|pnpmfile\.js)$/) ? true : false;
+      return path.match(/(pnpm-lock\.yaml|pnpm-workspaces\.yaml|pnpmfile\.js)$/)
+        ? true
+        : false;
     });
 
     let result = checkPackageManagerFiles('__not_important__', 'pnpm');

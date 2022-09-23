@@ -22,11 +22,12 @@ export const findPackageManagerFromManifest = (
   if (manifest) {
     const engines = manifest.engines;
     if (engines) {
-      for (const [engine, requirement] of Object.entries(engines).filter(([key]) =>
-        PACKAGE_MANAGERS.includes(key)
+      for (const [engine, requirement] of Object.entries(engines).filter(
+        ([key]) => PACKAGE_MANAGERS.includes(key)
       )) {
         const installed = installedPackageManagers.find(
-          (pm) => pm.name === engine && semver.satisfies(pm.version, requirement)
+          (pm) =>
+            pm.name === engine && semver.satisfies(pm.version, requirement)
         );
         installed && found.push(installed);
       }
@@ -44,10 +45,14 @@ export const findPackageManagerFromSignatureFiles = (
 
   PACKAGE_MANAGERS.map((pm) => {
     if (checkPackageManagerFiles(cwd, pm)) {
-      const installed = installedPackageManagers.find((item) => item.name === pm);
+      const installed = installedPackageManagers.find(
+        (item) => item.name === pm
+      );
       if (installed) found.push(installed);
       else if (ENV_IS_DEVELOPMENT && !ENV_IS_UNIT_TESTING) {
-        console.warn(`Project at ${cwd} has ${pm} files but ${pm} is not installed`);
+        console.warn(
+          `Project at ${cwd} has ${pm} files but ${pm} is not installed`
+        );
       }
     }
   });

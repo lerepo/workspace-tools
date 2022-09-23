@@ -14,7 +14,10 @@ Detected package managers are:
 ## Usage
 
 ```javascript
-import { detectPackageManagers, PackageManager } from '@lerepo/detect-package-manager';
+import {
+  detectPackageManagers,
+  PackageManager
+} from '@lerepo/detect-package-manager';
 
 const found: PackageManager = await detectPackageManagers({
   preference: ['pnpm', 'yarn']
