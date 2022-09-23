@@ -20,7 +20,9 @@ const useStyles = makeStyles({
   }
 });
 
-export const WorkspaceDetails: React.FC<{ workspace: Workspace }> = ({ workspace }) => {
+export const WorkspaceDetails: React.FC<{ workspace: Workspace }> = ({
+  workspace
+}) => {
   const classes = useStyles();
 
   return (
@@ -28,13 +30,17 @@ export const WorkspaceDetails: React.FC<{ workspace: Workspace }> = ({ workspace
       <Card className={classes.card}>
         <CardContent>
           <Typography component="h6" variant="h6">
-            {workspace.dependencies.length > 0 ? 'Depends on' : 'No dependencies'}
+            {workspace.dependencies.length > 0
+              ? 'Depends on'
+              : 'No dependencies'}
           </Typography>
           {workspace.dependencies.length > 0 && (
             <List dense>
               {workspace.dependencies.map((dep) => (
                 <ListItem key={dep}>
-                  <ListItemText primaryTypographyProps={{ noWrap: true }}>{dep}</ListItemText>
+                  <ListItemText primaryTypographyProps={{ noWrap: true }}>
+                    {dep}
+                  </ListItemText>
                 </ListItem>
               ))}
             </List>
@@ -50,7 +56,9 @@ export const WorkspaceDetails: React.FC<{ workspace: Workspace }> = ({ workspace
             <List dense>
               {workspace.mismatchedDependencies.map((dep) => (
                 <ListItem key={dep}>
-                  <ListItemText primaryTypographyProps={{ noWrap: true }}>{dep}</ListItemText>
+                  <ListItemText primaryTypographyProps={{ noWrap: true }}>
+                    {dep}
+                  </ListItemText>
                 </ListItem>
               ))}
             </List>
@@ -66,7 +74,9 @@ export const WorkspaceDetails: React.FC<{ workspace: Workspace }> = ({ workspace
             <List dense>
               {workspace.dependents.map((dep) => (
                 <ListItem key={dep}>
-                  <ListItemText primaryTypographyProps={{ noWrap: true }}>{dep}</ListItemText>
+                  <ListItemText primaryTypographyProps={{ noWrap: true }}>
+                    {dep}
+                  </ListItemText>
                 </ListItem>
               ))}
             </List>

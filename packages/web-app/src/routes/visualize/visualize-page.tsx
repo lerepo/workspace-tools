@@ -57,7 +57,9 @@ export const VisualizePage: React.FC = () => {
           </Box>
         ))}
       {status === 'error' && <div>{JSON.stringify(error)}</div>}
-      {status === 'success' && <ForceGraph data={data as Workspace[]} selection={selection} />}
+      {status === 'success' && (
+        <ForceGraph data={data as Workspace[]} selection={selection} />
+      )}
     </>
   );
 };

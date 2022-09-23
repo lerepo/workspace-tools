@@ -1,5 +1,10 @@
 import React from 'react';
-import { Checkbox, ListItem, ListItemText, ListItemSecondaryAction } from '@material-ui/core';
+import {
+  Checkbox,
+  ListItem,
+  ListItemText,
+  ListItemSecondaryAction
+} from '@material-ui/core';
 import { Workspace } from '~/model/workspace';
 
 export type SimpleWorkspaceListItemProps = {
@@ -8,11 +13,9 @@ export type SimpleWorkspaceListItemProps = {
   onSelectionChange: (path: string, selected: boolean) => void;
 };
 
-export const SimpleWorkspaceListItem: React.FC<SimpleWorkspaceListItemProps> = ({
-  workspace,
-  selected,
-  onSelectionChange
-}) => {
+export const SimpleWorkspaceListItem: React.FC<
+  SimpleWorkspaceListItemProps
+> = ({ workspace, selected, onSelectionChange }) => {
   const handleToggle = (event: React.ChangeEvent<HTMLInputElement>) => {
     onSelectionChange(workspace.location, event.target.checked);
   };

@@ -7,7 +7,11 @@ import { THEME_MAP, ThemeTone } from '~/theming';
 const PREFER_DARK_QUERY_STRING = '(prefers-color-scheme: dark)';
 const PREFER_DARK_MQL = matchMedia(PREFER_DARK_QUERY_STRING);
 const schemeFromMql = (fallbackValue: ThemeTone): ThemeTone =>
-  PREFER_DARK_MQL ? (PREFER_DARK_MQL.matches ? 'dark' : 'light') : fallbackValue;
+  PREFER_DARK_MQL
+    ? PREFER_DARK_MQL.matches
+      ? 'dark'
+      : 'light'
+    : fallbackValue;
 
 const SETTINGS_STORAGE_KEY = 'theme';
 
@@ -92,7 +96,8 @@ type ActionType =
 const reducer = (state: State, action: ActionType) => {
   switch (action.type) {
     case TOGGLE_TONE_ACTION: {
-      const themeTone: ThemeTone = state.themeTone === 'light' ? 'dark' : 'light';
+      const themeTone: ThemeTone =
+        state.themeTone === 'light' ? 'dark' : 'light';
       return {
         ...state,
         themeTone,
@@ -101,7 +106,9 @@ const reducer = (state: State, action: ActionType) => {
     }
     case UPDATE_TONE_ACTION: {
       const typedAction = action as UpdateToneActionType;
-      const newTone = typedAction.tone ? typedAction.tone : schemeFromMql(state.themeTone);
+      const newTone = typedAction.tone
+        ? typedAction.tone
+        : schemeFromMql(state.themeTone);
       return newTone !== state.themeTone
         ? {
             ...state,
@@ -131,7 +138,10 @@ const reducer = (state: State, action: ActionType) => {
     case CHANGE_THEME_ACTION: {
       const typedAction = action as ChangeThemeActionType;
       !typedAction.tone && (typedAction.tone = state.themeTone);
-      if (typedAction.name !== state.themeName || typedAction.tone !== state.themeTone) {
+      if (
+        typedAction.name !== state.themeName ||
+        typedAction.tone !== state.themeTone
+      ) {
         return {
           ...state,
           themeName: typedAction.name,
@@ -177,7 +187,9 @@ export const useThemeSettings = (): ThemeSettings => {
   // It only runs on initial render as well.
   useEffect((): void | (() => void) => {
     const onPreferredColorSchemeChanged = (): void => {
-      console.log(`useThemeSettings: onPreferredColorSchemeChanged effect runs`);
+      console.log(
+        `useThemeSettings: onPreferredColorSchemeChanged effect runs`
+      );
       dispatch({ type: UPDATE_TONE_ACTION });
     };
     if (PREFER_DARK_MQL) {
@@ -191,7 +203,10 @@ export const useThemeSettings = (): ThemeSettings => {
   useEffect(() => {
     console.log(`useThemeSettings: effect saving theme to local storage`);
     try {
-      localStorage.setItem(SETTINGS_STORAGE_KEY, JSON.stringify({ themeName, themeTone }));
+      localStorage.setItem(
+        SETTINGS_STORAGE_KEY,
+        JSON.stringify({ themeName, themeTone })
+      );
     } catch (error) {
       console.log(error);
     }

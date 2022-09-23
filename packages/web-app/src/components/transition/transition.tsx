@@ -19,7 +19,11 @@ const useStyles = makeStyles<Theme, { delay?: number }>({
   }
 });
 
-export const Transition: React.FC<TransitionProps> = ({ delay, renderTransition, children }) => {
+export const Transition: React.FC<TransitionProps> = ({
+  delay,
+  renderTransition,
+  children
+}) => {
   const classes = useStyles({ delay });
 
   return renderTransition({

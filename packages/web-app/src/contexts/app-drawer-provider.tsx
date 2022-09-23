@@ -2,7 +2,9 @@ import React, { useState, useMemo } from 'react';
 
 import { AppDrawerContextType, AppDrawerContext } from './app-drawer-context';
 
-export const AppDrawerProvider: React.FC = ({ children }): React.ReactElement => {
+export const AppDrawerProvider: React.FC = ({
+  children
+}): React.ReactElement => {
   const [open, setOpen] = useState(false);
   const [drawerExtensions, setDrawerExtensions] = useState<
     { key: string; component: React.ReactNode }[]
@@ -12,7 +14,11 @@ export const AppDrawerProvider: React.FC = ({ children }): React.ReactElement =>
     () => ({
       isOpen: open,
       extensions: drawerExtensions.map((ext) => ext.component),
-      addExtension: (key: string, component: React.ReactNode, position = 'end'): void => {
+      addExtension: (
+        key: string,
+        component: React.ReactNode,
+        position = 'end'
+      ): void => {
         console.log(`add drawer extension: ${key}`);
         position === 'start'
           ? setDrawerExtensions([{ key, component }, ...drawerExtensions])
@@ -20,7 +26,9 @@ export const AppDrawerProvider: React.FC = ({ children }): React.ReactElement =>
       },
       removeExtension: (key: string): void => {
         console.log(`remove drawer extension: ${key}`);
-        setDrawerExtensions(drawerExtensions.filter((item) => item.key === key));
+        setDrawerExtensions(
+          drawerExtensions.filter((item) => item.key === key)
+        );
       },
       toggle: () => setOpen(!open),
       show: () => !open && setOpen(true),
@@ -29,5 +37,9 @@ export const AppDrawerProvider: React.FC = ({ children }): React.ReactElement =>
     [drawerExtensions, open]
   );
 
-  return <AppDrawerContext.Provider value={drawer}>{children}</AppDrawerContext.Provider>;
+  return (
+    <AppDrawerContext.Provider value={drawer}>
+      {children}
+    </AppDrawerContext.Provider>
+  );
 };

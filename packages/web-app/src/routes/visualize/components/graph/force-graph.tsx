@@ -19,10 +19,10 @@ type Node = {
   links: Array<Link>;
 };
 
-export const ForceGraph: React.FC<{ data: Workspace[]; selection: string[] }> = ({
-  data,
-  selection
-}) => {
+export const ForceGraph: React.FC<{
+  data: Workspace[];
+  selection: string[];
+}> = ({ data, selection }) => {
   const drawer = useAppDrawer();
   const fgRef = useRef();
 
@@ -80,7 +80,12 @@ export const ForceGraph: React.FC<{ data: Workspace[]; selection: string[] }> = 
     data
       ?.filter((item) => selection.includes(item.location))
       .map((workspace) => {
-        const node = { id: workspace.location, name: workspace.name, neighbors: [], links: [] };
+        const node = {
+          id: workspace.location,
+          name: workspace.name,
+          neighbors: [],
+          links: []
+        };
         if (workspace.dependencies) {
           const depLinks = workspace.dependencies
             .filter((dep) => selection.includes(dep))
@@ -154,7 +159,9 @@ export const ForceGraph: React.FC<{ data: Workspace[]; selection: string[] }> = 
       nodeRelSize={NODE_R}
       linkWidth={(link) => (highlightLinks.has(link) ? 5 : 1)}
       linkDirectionalParticles={4}
-      linkDirectionalParticleWidth={(link) => (highlightLinks.has(link) ? 4 : 0)}
+      linkDirectionalParticleWidth={(link) =>
+        highlightLinks.has(link) ? 4 : 0
+      }
       nodeCanvasObject={paintRing}
       onNodeHover={handleNodeHover}
     />

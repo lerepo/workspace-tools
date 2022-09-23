@@ -76,10 +76,15 @@ export const SimpleWorkspaceList: React.SFC<{
     'all' | 'none' | 'indeterminate' | 'disabled'
   >('indeterminate');
 
-  const onItemSelectionChange = useCallback((location: string, selected: boolean) => {
-    const actionType = selected ? ITEMS_SELECTED_ACTION : ITEMS_UNSELECTED_ACTION;
-    dispatch({ type: actionType, items: [location] });
-  }, []);
+  const onItemSelectionChange = useCallback(
+    (location: string, selected: boolean) => {
+      const actionType = selected
+        ? ITEMS_SELECTED_ACTION
+        : ITEMS_UNSELECTED_ACTION;
+      dispatch({ type: actionType, items: [location] });
+    },
+    []
+  );
 
   useEffect(() => {
     console.log(`selection update: ${state.selection}`);
@@ -105,13 +110,18 @@ export const SimpleWorkspaceList: React.SFC<{
     }
   }, [state, workspaces]);
 
-  const handleMultiSelectToggle = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleMultiSelectToggle = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
     console.log(`multi-selection toggle: ${event.target.checked}`);
     const actionType =
       multiSelectionState === 'indeterminate' || multiSelectionState === 'none'
         ? ITEMS_SELECTED_ACTION
         : ITEMS_UNSELECTED_ACTION;
-    dispatch({ type: actionType, items: workspaces.map((item) => item.location) });
+    dispatch({
+      type: actionType,
+      items: workspaces.map((item) => item.location)
+    });
   };
 
   console.log(`workspaces list: ${workspaces.length}`);
@@ -136,7 +146,11 @@ export const SimpleWorkspaceList: React.SFC<{
           <SimpleWorkspaceListItem
             key={item.location}
             workspace={item}
-            selected={state.selection.findIndex((location) => item.location === location) !== -1}
+            selected={
+              state.selection.findIndex(
+                (location) => item.location === location
+              ) !== -1
+            }
             onSelectionChange={onItemSelectionChange}
           />
         ))}

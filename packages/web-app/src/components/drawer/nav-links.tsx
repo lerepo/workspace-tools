@@ -1,7 +1,14 @@
 import React from 'react';
 import { useLocation, Link } from 'react-router-dom';
 
-import { Divider, List, Hidden, ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
+import {
+  Divider,
+  List,
+  Hidden,
+  ListItem,
+  ListItemIcon,
+  ListItemText
+} from '@material-ui/core';
 import { Explore, BubbleChart, Assessment, GitHub } from '@material-ui/icons';
 
 export interface BaseDrawerLink {

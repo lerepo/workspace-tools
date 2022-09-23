@@ -1,6 +1,13 @@
 import React from 'react';
 
-import { Fade, AppBar, Toolbar, Hidden, IconButton, Tooltip } from '@material-ui/core';
+import {
+  Fade,
+  AppBar,
+  Toolbar,
+  Hidden,
+  IconButton,
+  Tooltip
+} from '@material-ui/core';
 import { Menu, MenuOpen, GitHub, InvertColors } from '@material-ui/icons';
 
 import { Transition } from '~/components/transition';
@@ -14,15 +21,23 @@ export type HeaderProps = {
 export const AppHeader: React.FC<HeaderProps> = ({ toggleDarkMode }) => {
   const drawer = useAppDrawer();
 
-  const triggerIcon: React.ReactNode = drawer && drawer.isOpen ? <MenuOpen /> : <Menu />;
+  const triggerIcon: React.ReactNode =
+    drawer && drawer.isOpen ? <MenuOpen /> : <Menu />;
 
   return (
-    <Transition delay={337} renderTransition={(props) => <Fade in timeout={775} {...props} />}>
+    <Transition
+      delay={337}
+      renderTransition={(props) => <Fade in timeout={775} {...props} />}
+    >
       <AppBar position="sticky" color="primary" elevation={2}>
         <Toolbar>
           {drawer && (
             <Hidden lgUp>
-              <IconButton edge="start" aria-label="open navigation drawer" onClick={drawer.toggle}>
+              <IconButton
+                edge="start"
+                aria-label="open navigation drawer"
+                onClick={drawer.toggle}
+              >
                 <Hidden smUp>{triggerIcon}</Hidden>
                 <Hidden xsDown>{triggerIcon}</Hidden>
               </IconButton>
@@ -40,7 +55,10 @@ export const AppHeader: React.FC<HeaderProps> = ({ toggleDarkMode }) => {
           </Hidden>
           <Hidden xsDown>
             <Tooltip title="Open project repo on GitHub" placement="bottom">
-              <IconButton href="https://github.com/abdes/yarn-plugins" target="_blank">
+              <IconButton
+                href="https://github.com/abdes/yarn-plugins"
+                target="_blank"
+              >
                 <GitHub />
               </IconButton>
             </Tooltip>

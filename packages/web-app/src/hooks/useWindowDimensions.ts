@@ -8,8 +8,13 @@ function getWindowDimensions() {
   };
 }
 
-export default function useWindowDimensions(): { width: number; height: number } {
-  const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
+export default function useWindowDimensions(): {
+  width: number;
+  height: number;
+} {
+  const [windowDimensions, setWindowDimensions] = useState(
+    getWindowDimensions()
+  );
 
   useEffect(() => {
     function handleResize() {

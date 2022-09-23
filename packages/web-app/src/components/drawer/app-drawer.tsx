@@ -22,7 +22,9 @@ const useStyles = makeStyles<Theme>((theme) => ({
     backgroundPosition: 'center',
     backgroundSize: '80%',
     backgroundRepeat: 'no-repeat',
-    backgroundImage: `url(${theme.palette.type === 'light' ? LOGO_LIGHT_IMAGE : LOGO_DARK_IMAGE})`,
+    backgroundImage: `url(${
+      theme.palette.type === 'light' ? LOGO_LIGHT_IMAGE : LOGO_DARK_IMAGE
+    })`,
     [theme.breakpoints.down('xs')]: {
       height: '48px'
     }
@@ -48,7 +50,9 @@ export const AppDrawer: React.FC = ({ children }) => {
     </>
   );
   return drawer ? (
-    <Transition renderTransition={(props) => <Fade in timeout={550} {...props} />}>
+    <Transition
+      renderTransition={(props) => <Fade in timeout={550} {...props} />}
+    >
       <nav aria-label="navigation">
         <Hidden smUp>
           <SwipeableDrawer
