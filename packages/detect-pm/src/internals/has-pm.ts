@@ -1,4 +1,4 @@
-import execa from 'execa';
+import { execa } from 'execa';
 import semver from 'semver';
 
 import { PackageManager, PackageManagerName } from '~/package-manager';
@@ -7,6 +7,8 @@ export class InstalledPackageManagerLocator implements PackageManager {
   private _detectionDone = false;
   private _error: string | null = null;
   private _version: string | null = null;
+
+  constructor(public name: PackageManagerName) {}
 
   get error(): string | null {
     return this._error;
@@ -24,8 +26,6 @@ export class InstalledPackageManagerLocator implements PackageManager {
     } else throw new Error(`call detect() before accessing the PackageManager version`);
   }
 
-  constructor(public name: PackageManagerName) {}
-
   /**
    * If the pm we are looking for is yarn and the project has been setup with
    * yarn berry (v2), yarn executable will always resolveto the locally
@@ -41,7 +41,8 @@ export class InstalledPackageManagerLocator implements PackageManager {
         if (this._version === null)
           this._error = `command '${this.name} --version' produced output '${stdout}, which is not a valid semantic version`;
       } catch (error) {
-        this._error = error.message;
+        if (error instanceof Error) this._error = error.message;
+        else this._error = 'unknown error';
       }
     }
   }

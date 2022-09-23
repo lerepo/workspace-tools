@@ -1,16 +1,16 @@
 import * as ppath from 'path';
 
-import { Cli, Command } from 'clipanion';
+import { Cli, Command, Option } from 'clipanion';
 import {
   detectPackageManagers,
   detectInstalledPackageManagers,
   PackageManager
 } from '@lerepo/detect-package-manager';
+import { VersionCommand } from 'clipanion/lib/advanced/builtins';
 
 export class HelpCommand extends Command {
-  @Command.Path(`help`)
-  @Command.Path(`--help`)
-  @Command.Path(`-h`)
+  static paths = [[`help`, `--help`, `-h`]];
+
   async execute(): Promise<0 | 1> {
     this.context.stdout.write(this.cli.usage(DefaultCommand, { detailed: true }));
     return Promise.resolve(0);
@@ -43,20 +43,16 @@ class DefaultCommand extends Command {
     ]
   });
 
-  @Command.Array('--preference,-p')
-  public preference?: string[] = [];
+  static paths = [[`detect`], Command.Default];
 
-  @Command.String('--cwd')
-  public cwd?: string;
+  public preference? = Option.Array(`--preference,-p`, { required: false });
 
-  @Command.Boolean('--json')
-  public json?: boolean;
+  public cwd? = Option.String(`--cwd`, { required: false });
 
-  @Command.Boolean('--installed')
-  public detectInstalled?: boolean;
+  public json? = Option.Boolean('--json', { required: false });
 
-  @Command.Path('detect')
-  @Command.Path()
+  public detectInstalled? = Option.Boolean('--installed', { required: false });
+
   async execute() {
     if (this.detectInstalled) {
       const installed = await detectInstalledPackageManagers();
@@ -112,7 +108,7 @@ export async function main(): Promise<void> {
 
     cli.register(DefaultCommand);
     cli.register(HelpCommand);
-    cli.register(Command.Entries.Version);
+    cli.register(VersionCommand);
 
     await cli.runExit(process.argv.slice(2), {
       ...Cli.defaultContext

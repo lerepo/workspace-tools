@@ -150,11 +150,16 @@ export class HttpServer {
    * @param {string} pathname - dynamic path
    * @param {Object} response - response object
    */
-  private _serveDynamicContent = (request: IncomingMessage, response: ServerResponse): void => {
+  private _serveDynamicContent = (
+    request: IncomingMessage,
+    response: ServerResponse
+  ): void => {
     // Retrieve the HTTP method
     const method = request.method || 'GET';
     if (method.toLowerCase() !== 'get') {
-      console.error(`Only GET requests are allowed, but received a request with ${method} method.`);
+      console.error(
+        `Only GET requests are allowed, but received a request with ${method} method.`
+      );
       response.writeHead(400);
       response.end();
     }

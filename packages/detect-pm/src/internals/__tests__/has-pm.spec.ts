@@ -1,4 +1,4 @@
-import execa from 'execa';
+import { execa, ExecaReturnValue, ExecaChildProcess } from 'execa';
 import semver from 'semver';
 
 jest.mock('execa');
@@ -8,10 +8,9 @@ const mockedSemverClean = <jest.MockedFunction<typeof semver.clean>>semver.clean
 
 import { InstalledPackageManagerLocator, has } from '~/internals/has-pm';
 
-function execaSuccessResult(
-  stdout: string
-): execa.ExecaReturnValue<Buffer> | execa.ExecaChildProcess<Buffer> {
+function execaSuccessResult(stdout: string): ExecaReturnValue<Buffer> | ExecaChildProcess<Buffer> {
   return {
+    escapedCommand: '__not_important__',
     command: '__not_important__',
     exitCode: 0,
     stdout: <Buffer>(<unknown>stdout),
@@ -27,7 +26,7 @@ function execaSuccessResult(
 describe('PackageManagerLocator', () => {
   it('should throw if version is accessed before detect', () => {
     const pm = new InstalledPackageManagerLocator('npm');
-    expect(() => pm.version).toThrowError(/call detect()/);
+    expect(() => pm.version).toThrow(/call detect()/);
   });
   it('should detect package manager', async () => {
     const pm = new InstalledPackageManagerLocator('npm');
@@ -46,7 +45,7 @@ describe('PackageManagerLocator', () => {
     });
     await pm.detect();
     expect(pm.error).toMatch(/not found/);
-    expect(() => pm.version).toThrowError(/not installed/);
+    expect(() => pm.version).toThrow(/not installed/);
   });
 
   it('should have an error when pm does not return semantic version number', async () => {
@@ -55,7 +54,7 @@ describe('PackageManagerLocator', () => {
     mockedSemverClean.mockReturnValue(null);
     await pm.detect();
     expect(pm.error).toMatch(/not a valid semantic version/);
-    expect(() => pm.version).toThrowError(/not installed/);
+    expect(() => pm.version).toThrow(/not installed/);
   });
 });
 
@@ -73,22 +72,22 @@ describe('has', () => {
 
   it('should call detect()', () => {
     has('npm');
-    expect(mockDetect).toBeCalled();
+    expect(mockDetect).toHaveBeenCalled();
   });
 
   it('should return null if detection fails', async () => {
     mockError.mockReturnValue('failed');
     const pm = await has('npm');
-    expect(mockDetect).toBeCalled();
-    expect(mockError).toBeCalled();
+    expect(mockDetect).toHaveBeenCalled();
+    expect(mockError).toHaveBeenCalled();
     expect(pm).toBeNull();
   });
 
   it('should return valid pm if detection succeeds', async () => {
     mockError.mockReturnValue(null);
     const pm = await has('npm');
-    expect(mockDetect).toBeCalled();
-    expect(mockError).toBeCalled();
+    expect(mockDetect).toHaveBeenCalled();
+    expect(mockError).toHaveBeenCalled();
     expect(pm).not.toBeNull();
   });
 });

@@ -46,7 +46,7 @@ describe('detectPackageManagers', () => {
       }
     ]);
     const found = await detectPackageManagers();
-    expect(mockFindPackageManagerFromManifest).toBeCalled();
+    expect(mockFindPackageManagerFromManifest).toHaveBeenCalled();
     expect(found).toBeDefined();
     expect(found).toEqual({
       name: 'yarn',
@@ -65,7 +65,7 @@ describe('detectPackageManagers', () => {
       }
     ]);
     const found = await detectPackageManagers();
-    expect(mockFindPackageManagerFromManifest).toBeCalled();
+    expect(mockFindPackageManagerFromManifest).toHaveBeenCalled();
     expect(found).toBeDefined();
     expect(found).toEqual({
       name: 'yarn',
@@ -83,7 +83,7 @@ describe('detectPackageManagers', () => {
       }
     ]);
     const found = await detectPackageManagers({ cwd: '/project/workspace' });
-    expect(mockFindPackageManagerFromManifest).toBeCalled();
+    expect(mockFindPackageManagerFromManifest).toHaveBeenCalled();
     expect(found).toBeDefined();
     expect(found).toEqual({
       name: 'yarn',
@@ -95,7 +95,7 @@ describe('detectPackageManagers', () => {
   it('should stop detection if it reaches the root with no pm detected', async () => {
     mockFindPackageManagerFromManifest.mockReturnValue([]);
     const found = await detectPackageManagers({ cwd: '/root/project/packages/workspace' });
-    expect(mockFindPackageManagerFromManifest).toBeCalled();
+    expect(mockFindPackageManagerFromManifest).toHaveBeenCalled();
     expect(found).toBeNull();
   });
 });

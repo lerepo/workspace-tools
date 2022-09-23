@@ -1,6 +1,9 @@
 {
   "name": "@lerepo/web-app",
   "version": "0.0.6",
+  "publishConfig": {
+    "access": "public"
+  },
   "description": "Companion web-app for @lerepo/cli.",
   "license": "MIT",
   "repository": {
@@ -13,8 +16,9 @@
   },
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack --progress",
-    "build:quiet": "cross-env NODE_ENV=production webpack --display=none",
+    "build-storybook": "build-storybook",
     "build:analyze": "cross-env NODE_ENV=production WITH_BUNDLE_ANALYZER=true webpack",
+    "build:quiet": "cross-env NODE_ENV=production webpack --display=none",
     "clean": "rimraf dist build",
     "format": "yarn g:format",
     "format:all": "yarn g:format:all",
@@ -25,15 +29,14 @@
     "open": "open-cli http://localhost:3000 -- firefox -devtools",
     "prepack": "yarn clean && yarn build:quiet",
     "start": "concurrently \"npm:wds:mon\" \"npm:open\"",
+    "storybook": "start-storybook -p 6006",
     "test": "jest --passWithNoTests",
     "test:watch": "jest --watch",
     "tsc": "tsc -p tsconfig.app.json",
     "tsc:watch": "yarn type-check --watch",
     "type-check": "tsc --noEmit --incremental false -p tsconfig.app.json",
     "wds": "cross-env NODE_ENV=development webpack-dev-server",
-    "wds:mon": "nodemon --config .nodemon-wds.json",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "wds:mon": "nodemon --config .nodemon-wds.json"
   },
   "dependencies": {
     "@fontsource/roboto": "^4.5.8",
@@ -97,6 +100,7 @@
     "postcss-loader": "^7.0.1",
     "postcss-normalize": "^10.0.1",
     "postcss-preset-env": "^7.8.2",
+    "prettier-plugin-package": "^1.3.0",
     "react": "^17",
     "react-dom": "^17",
     "react-is": "^17",
@@ -129,8 +133,5 @@
       "Firefox ESR",
       "not ie < 11"
     ]
-  },
-  "publishConfig": {
-    "access": "public"
   }
 }

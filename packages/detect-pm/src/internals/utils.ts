@@ -12,7 +12,7 @@ export const findManifestInDirectory = (directory: string): Manifest | null => {
       return manifest as Manifest;
     }
   } catch (error) {
-    if (ENV_IS_DEVELOPMENT && !ENV_IS_UNIT_TESTING) {
+    if (ENV_IS_DEVELOPMENT && !ENV_IS_UNIT_TESTING && error instanceof ErrnoException) {
       if (error.code !== 'ENOENT')
         console.warn(`attempt to read manifest at ${path} failed: ${error.message}`);
     }

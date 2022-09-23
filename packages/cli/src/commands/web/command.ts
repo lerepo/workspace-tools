@@ -1,11 +1,18 @@
-import * as execa from 'execa';
-import * as yup from 'yup';
-import { Command, Usage } from 'clipanion';
+import { execaSync } from 'execa';
+import * as t from 'typanion';
+import { Command, Option, Usage } from 'clipanion';
 import { BaseCommand } from '../../core';
 
-import { HttpServer, ApiHandler, DEFAULT_SERVER_PORT, DEFAULT_SERVER_HOST } from './server';
+import {
+  HttpServer,
+  ApiHandler,
+  DEFAULT_SERVER_PORT,
+  DEFAULT_SERVER_HOST
+} from './server';
 
 export class WebCommand extends BaseCommand {
+  static paths = [[`web`]];
+
   static usage: Usage = Command.Usage({
     description: 'Start the locally served web-app for the lrt UI.',
     details: `
@@ -22,35 +29,41 @@ export class WebCommand extends BaseCommand {
         'Start the app when the `@lerepo/cli` is installed as a dev dependency in the project.',
         'yarn lrt web'
       ],
-      ['Start the web application using yarn dlx.', 'yarn dlx -p @lerepo/cli lrt web']
+      [
+        'Start the web application using yarn dlx.',
+        'yarn dlx -p @lerepo/cli lrt web'
+      ]
     ]
   });
 
-  static schema = yup.object().shape({
-    port: yup.number().integer(),
-    host: yup
-      .string()
-      .matches(
-        /^((((1?\d)?\d|2[0-4]\d|25[0-5])\.){3}((1?\d)?\d|2[0-4]\d|25[0-5]))|([\dA-Fa-f]{1,4}(:[\dA-Fa-f]{1,4}){7})|(([\dA-Fa-f]{1,4}:){0,5}::([\dA-Fa-f]{1,4}:){0,5}[\dA-Fa-f]{1,4})$/,
-        {
-          excludeEmptyString: true,
-          message: 'The host option should match an IPV4 or IPV6 address.'
-        }
-      )
+  public port? = Option.String('--port', {
+    required: false,
+    validator: t.cascade(t.isNumber(), [
+      t.isInteger(),
+      t.isInInclusiveRange(1, 65535)
+    ])
   });
 
-  @Command.String('--port')
-  public port?: number;
+  public host? = Option.String(`--host`, {
+    required: false,
+    validator: t.cascade(
+      t.isString(),
+      t.matchesRegExp(
+        /^(25[0-5]|2[0-4]\d|[01]?\d{1,2})\.(25[0-5]|2[0-4]\d|[01]?\d{1,2})\.(25[0-5]|2[0-4]\d|[01]?\d{1,2})\.(25[0-5]|2[0-4]\d|[01]?\d{1,2})$/
+      )
+    )
+  });
 
-  @Command.String('--host')
-  public host?: string;
-
-  @Command.Path('web')
   async execute(): Promise<0 | 1> {
     this.context.stdout.write('Start web server\n');
 
     const listWorkspaces = () => {
-      const { stdout } = execa.sync('yarn', ['workspaces', 'list', '--verbose', '--json']);
+      const { stdout } = execaSync('yarn', [
+        'workspaces',
+        'list',
+        '--verbose',
+        '--json'
+      ]);
       return stdout;
     };
 
@@ -59,14 +72,18 @@ export class WebCommand extends BaseCommand {
         const json = listWorkspaces();
         resultHandler(200, 'text/plain; charset=utf8', json);
       } catch (error) {
-        this.context.stderr.write(`Failed to list workspaces: ${error.message}`);
+        this.context.stderr.write(
+          `Failed to list workspaces: ${
+            error instanceof Error ? error.message : 'unknown'
+          }`
+        );
         resultHandler(200, 'application/json', JSON.stringify(error));
       }
     };
 
     const server = new HttpServer();
     server.setApiHandler('/api/deps', depsApiHandler);
-    server.init(this.port, this.host);
+    server.init(Number(this.port), this.host);
 
     return Promise.resolve(0);
   }

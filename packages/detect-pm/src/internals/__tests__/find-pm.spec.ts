@@ -36,7 +36,7 @@ describe('findPackageManagerFromManifest', () => {
     });
 
     const found = findPackageManagerFromManifest('__not_important__', installed);
-    expect(mockFindManifestInDirectory).toBeCalledWith('__not_important__');
+    expect(mockFindManifestInDirectory).toHaveBeenCalledWith('__not_important__');
     expect(found).toBeTruthy();
     expect(found.length).toEqual(2);
     expect(found.find((pm) => pm.name === 'npm')).toBeTruthy();
@@ -57,7 +57,7 @@ describe('findPackageManagerFromManifest', () => {
     });
 
     const found = findPackageManagerFromManifest('__not_important__', installed);
-    expect(mockFindManifestInDirectory).toBeCalledWith('__not_important__');
+    expect(mockFindManifestInDirectory).toHaveBeenCalledWith('__not_important__');
     expect(found).toBeTruthy();
     expect(found.length).toEqual(1);
     expect(found.find((pm) => pm.name === 'pnpm')).toBeTruthy();
@@ -77,14 +77,14 @@ describe('findPackageManagerFromManifest', () => {
     });
 
     let found = findPackageManagerFromManifest('__not_important__', installed);
-    expect(mockFindManifestInDirectory).toBeCalledWith('__not_important__');
+    expect(mockFindManifestInDirectory).toHaveBeenCalledWith('__not_important__');
     expect(found).toBeTruthy();
     expect(found.length).toEqual(0);
 
     mockFindManifestInDirectory.mockReturnValueOnce({});
 
     found = findPackageManagerFromManifest('__not_important__', installed);
-    expect(mockFindManifestInDirectory).toBeCalledWith('__not_important__');
+    expect(mockFindManifestInDirectory).toHaveBeenCalledWith('__not_important__');
     expect(found).toBeTruthy();
     expect(found.length).toEqual(0);
   });
@@ -107,7 +107,7 @@ describe('findPackageManagerFromSignatureFiles', () => {
     });
 
     const found = findPackageManagerFromSignatureFiles('__not_important__', installed);
-    expect(mockCheckPackageManagerFiles).toBeCalledTimes(3);
+    expect(mockCheckPackageManagerFiles).toHaveBeenCalledTimes(3);
     expect(found.length).toEqual(2);
     expect(found.find((value) => value.name === 'npm')).toBeTruthy();
     expect(found.find((value) => value.name === 'yarn')).toBeTruthy();
@@ -124,7 +124,7 @@ describe('findPackageManagerFromSignatureFiles', () => {
     });
 
     const found = findPackageManagerFromSignatureFiles('__not_important__', installed);
-    expect(mockCheckPackageManagerFiles).toBeCalledTimes(3);
+    expect(mockCheckPackageManagerFiles).toHaveBeenCalledTimes(3);
     expect(found.length).toEqual(1);
     expect(found.find((value) => value.name === 'yarn')).toBeTruthy();
   });
@@ -137,7 +137,7 @@ describe('findPackageManagerFromSignatureFiles', () => {
     });
 
     const found = findPackageManagerFromSignatureFiles('__not_important__', installed);
-    expect(mockCheckPackageManagerFiles).toBeCalledTimes(3);
+    expect(mockCheckPackageManagerFiles).toHaveBeenCalledTimes(3);
     expect(found.length).toEqual(0);
   });
 });

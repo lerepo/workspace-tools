@@ -2,7 +2,7 @@
 module.exports = {
   // We use a larger print width because Prettier's word-wrapping seems to be
   // tuned for plain JavaScript without type annotations
-  printWidth: 100,
+  printWidth: 80,
   singleQuote: true,
   semi: true,
   // Preserve existing newlines
@@ -26,5 +26,6 @@ module.exports = {
         printWidth: 80
       }
     }
-  ]
+  ],
+  plugins: ['prettier-plugin-package']
 };

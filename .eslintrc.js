@@ -1,19 +1,18 @@
+/*
+ * We use eslint basic for everything except TypeScript files. For TypeScript,
+ * we use an override to parse with @typescript-eslint plugin.
+ */
 module.exports = {
-  parser: '@typescript-eslint/parser',
-  parserOptions: {
-    ecmaVersion: 2020,
-    sourceType: 'module',
-    ecmaFeatures: {
-      experimentalDecorators: true,
-      experimentalObjectRestSpread: true,
-      jsx: true
-    },
-    extraFileExtensions: ['.json', '.md']
-  },
-  ignorePatterns: ['__mocks__', 'dist', 'build'],
-  globals: {
-    globalThis: false
-  },
+  root: true,
+  extends: [
+    'eslint:recommended',
+    'plugin:json/recommended',
+    'plugin:md/recommended',
+    'plugin:security/recommended',
+    'plugin:editorconfig/noconflict',
+    'plugin:promise/recommended',
+    'prettier'
+  ],
   env: {
     node: 12,
     commonjs: true,
@@ -21,8 +20,16 @@ module.exports = {
     browser: false,
     jest: true
   },
+  parserOptions: {
+    ecmaVersion: 12,
+    sourceType: 'module'
+  },
+  ignorePatterns: ['__mocks__', 'dist', 'build', 'lib', 'CHANGELOG.md'],
+  globals: {
+    globalThis: false
+  },
   plugins: [
-    '@typescript-eslint',
+    'md',
     'optimize-regex',
     'no-secrets',
     'security',
@@ -33,30 +40,33 @@ module.exports = {
     'react',
     'react-hooks'
   ],
-
-  settings: {
-    react: {
-      // React version. "detect" automatically picks the version you have installed.
-      // You can also use `16.0`, `16.3`, etc, if you want to override the detected value.
-      // default to latest and warns if missing
-      // It will default to "detect" in the future
-      version: '16.13'
-    }
-  },
-
-  extends: [
-    'eslint:recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:json/recommended',
-    'plugin:security/recommended',
-    'plugin:editorconfig/noconflict',
-    'plugin:promise/recommended',
-    'plugin:prettier/recommended',
-    'prettier/@typescript-eslint',
-    'plugin:react/recommended',
-    'plugin:react-hooks/recommended'
-  ],
   overrides: [
+    {
+      files: ['**/*.{ts,tsx}'],
+      plugins: ['@typescript-eslint'],
+      extends: [
+        'eslint:recommended',
+        'plugin:@typescript-eslint/recommended',
+        'plugin:json/recommended',
+        'plugin:md/recommended',
+        'plugin:security/recommended',
+        'plugin:editorconfig/noconflict',
+        'plugin:promise/recommended',
+        'plugin:jest/recommended',
+        'prettier'
+      ],
+      parser: '@typescript-eslint/parser',
+      parserOptions: {
+        ecmaVersion: 2020,
+        sourceType: 'module',
+        ecmaFeatures: {
+          experimentalDecorators: true,
+          experimentalObjectRestSpread: true,
+          jsx: true
+        },
+        extraFileExtensions: ['.json', '.md']
+      }
+    },
     {
       files: ['**/*.{md,mkdn,mdown,markdown}'],
       parser: 'markdown-eslint-parser',
@@ -67,9 +77,7 @@ module.exports = {
           // wouldn't be able to parse *.md files.
           // You also can configure other options supported by prettier here -
           // "prose-wrap" is particularly useful for *.md files
-          {
-            parser: 'markdown'
-          }
+          { parser: 'markdown' }
         ]
       }
     },
@@ -86,12 +94,9 @@ module.exports = {
     // JSON
     'json/*': ['error', 'allowComments'],
 
-    // MARKDOWN
-
     // SECURITY
     'no-secrets/no-secrets': 'error',
     'security/detect-object-injection': 'off',
-    'security/detect-unsafe-regex': 'off',
 
     // OTHER
     'optimize-regex/optimize-regex': 'warn',

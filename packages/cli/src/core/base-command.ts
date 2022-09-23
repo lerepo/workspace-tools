@@ -1,9 +1,8 @@
 import { CommandContext } from './context';
-import { Command } from 'clipanion';
+import { Command, Option } from 'clipanion';
 
 export abstract class BaseCommand extends Command<CommandContext> {
-  @Command.String(`--cwd`, { hidden: true })
-  cwd?: string;
+  cwd = Option.String(`--cwd`, { hidden: true });
 
   abstract execute(): Promise<number | void>;
 }
