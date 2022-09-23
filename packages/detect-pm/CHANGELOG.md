@@ -1,5 +1,11 @@
 # @lerepo/detect-package-manager
 
+## 0.2.0
+
+### Minor Changes
+
+- Update dependencies and do a major cleanup of source code.
+
 ## 0.1.1
 
 ### Patch Changes

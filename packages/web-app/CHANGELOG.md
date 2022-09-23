@@ -1,5 +1,18 @@
 # @lerepo/web-app
 
+## 0.1.0
+
+### Minor Changes
+
+- Update dependencies and do a major cleanup of source code.
+
+## 0.0.7
+
+### Patch Changes
+
+- 8713e47: chore: add storybook to the project.
+- f806376: chore: add global theme decorator to storybook.
+
 ## 0.0.6
 
 ### Patch Changes

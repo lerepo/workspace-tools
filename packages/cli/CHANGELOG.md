@@ -1,5 +1,24 @@
 # @lerepo/cli
 
+## 0.1.0
+
+### Minor Changes
+
+- Update dependencies and do a major cleanup of source code.
+
+### Patch Changes
+
+- Updated dependencies
+  - @lerepo/web-app@0.1.0
+
+## 0.0.9
+
+### Patch Changes
+
+- Updated dependencies [8713e47]
+- Updated dependencies [f806376]
+  - @lerepo/web-app@0.0.7
+
 ## 0.0.8
 
 ### Patch Changes

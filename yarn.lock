@@ -2977,7 +2977,7 @@ __metadata:
 
 "@lerepo/cli@file:./packages/cli::locator=%40lerepo%2Fworkspace-tools%40workspace%3A.":
   version: 0.0.8
-  resolution: "@lerepo/cli@file:./packages/cli#./packages/cli::hash=07aeea&locator=%40lerepo%2Fworkspace-tools%40workspace%3A."
+  resolution: "@lerepo/cli@file:./packages/cli#./packages/cli::hash=602078&locator=%40lerepo%2Fworkspace-tools%40workspace%3A."
   dependencies:
     "@lerepo/web-app": "workspace:^0.0.6"
     clipanion: ^3.1.0
@@ -2987,7 +2987,7 @@ __metadata:
     typanion: ^3.12.0
   bin:
     lrt: ./bin/lrt
-  checksum: bfeffef871fb22c89872aaace17313f37caf398ab10e9448b61e30e1b945295b0e8012a50b574d2ac04235cc09a4beef2feb2b409061c8d59196f03f63fcf9f4
+  checksum: cab7492f34e83ad50446e19fe4619cf1dd151946ed97fbf079e90073e945c6019a1669164e0bc39f6ba3f85b2c351fa945b73ec694b483a785a01ff79d161905
   languageName: node
   linkType: hard
 
@@ -3103,7 +3103,7 @@ __metadata:
 
 "@lerepo/web-app@file:./packages/web-app::locator=%40lerepo%2Fworkspace-tools%40workspace%3A.":
   version: 0.0.6
-  resolution: "@lerepo/web-app@file:./packages/web-app#./packages/web-app::hash=befff8&locator=%40lerepo%2Fworkspace-tools%40workspace%3A."
+  resolution: "@lerepo/web-app@file:./packages/web-app#./packages/web-app::hash=851cb9&locator=%40lerepo%2Fworkspace-tools%40workspace%3A."
   dependencies:
     "@fontsource/roboto": ^4.5.8
     "@material-ui/core": ^4.12.4
@@ -3115,7 +3115,7 @@ __metadata:
     react-force-graph-2d: ^1.23.11
     react-router-dom: ^6.4.1
     require-from-string: ^2.0.2
-  checksum: fb97fc00af0ae1affea8ba20233ca42f46ed42b5e3631d93ebaf11f55f2b9783f2e9fda45d7e0e0beb4031704160ac0cf4fc85d8f2c2a18b80b6ad6ca6a05335
+  checksum: 95410bf8c9fb4ec7edab2b2a71ff43e32d680682b1db62c3ac32ff56d7f5267b1c21998d527eb4197f2227a1c304c9daf3d46e556a4565bde49ea2197d84edfb
   languageName: node
   linkType: hard
 

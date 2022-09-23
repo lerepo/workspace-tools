@@ -1,5 +1,16 @@
 # @lerepo/detect-package-manager-cli
 
+## 0.3.0
+
+### Minor Changes
+
+- Update dependencies and do a major cleanup of source code.
+
+### Patch Changes
+
+- Updated dependencies
+  - @lerepo/detect-pm@0.2.0
+
 ## 0.2.1
 
 ### Patch Changes
