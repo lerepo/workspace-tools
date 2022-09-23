@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navigate, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 
 import { CssBaseline, ThemeProvider } from '@material-ui/core';
 import { styled } from '@material-ui/core/styles';
