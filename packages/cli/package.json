@@ -2,7 +2,8 @@
   "name": "@lerepo/cli",
   "version": "0.1.0",
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "directory": "package"
   },
   "description": "Command line interface for the mono-repo workspace collection of tools.",
   "license": "MIT",
@@ -19,6 +20,8 @@
     "yarn": ">=2"
   },
   "scripts": {
+    "_r:clean": "rimraf package && rimraf package.tgz",
+    "_r:prepare": "yarn _r:clean && yarn pack && jaguar -x package.tgz && rimraf package.tgz && rimraf package.tgz",
     "babel:build": "babel --root-mode upward src --out-dir lib --extensions '.ts' --env-name production",
     "babel:watch": "babel --root-mode upward src --out-dir lib --extensions '.ts' --watch",
     "build": "yarn babel:build",
@@ -69,6 +72,7 @@
     "dotenv": "^16.0.2",
     "file-loader": "^6.2.0",
     "fork-ts-checker-webpack-plugin": "^7.2.13",
+    "jaguar": "^6.0.1",
     "jest": "^29.0.3",
     "nodemon": "^2.0.20",
     "open-cli": "^7.0.1",
