@@ -1,5 +1,16 @@
 # @lerepo/detect-package-manager-cli
 
+## 0.4.0
+
+### Minor Changes
+
+- Added release lifecycle
+
+### Patch Changes
+
+- Updated dependencies
+  - @lerepo/detect-pm@0.3.0
+
 ## 0.3.0
 
 ### Minor Changes

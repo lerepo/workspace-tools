@@ -1,5 +1,11 @@
 # @lerepo/web-app
 
+## 0.2.0
+
+### Minor Changes
+
+- Added release lifecycle
+
 ## 0.1.0
 
 ### Minor Changes

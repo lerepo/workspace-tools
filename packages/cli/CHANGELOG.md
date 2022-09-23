@@ -1,5 +1,16 @@
 # @lerepo/cli
 
+## 0.2.0
+
+### Minor Changes
+
+- Added release lifecycle
+
+### Patch Changes
+
+- Updated dependencies
+  - @lerepo/web-app@0.2.0
+
 ## 0.1.0
 
 ### Minor Changes
