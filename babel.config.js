@@ -8,6 +8,15 @@ module.exports = (api) => {
       : ['**/__tests__', '**/__mocks__', '**/*.spec.ts', 'src/test-setup.ts'],
     plugins: [
       [
+        '@babel/plugin-transform-runtime',
+        {
+          absoluteRuntime: false,
+          corejs: false,
+          helpers: true,
+          regenerator: true
+        }
+      ],
+      [
         'transform-define',
         {
           ENV_IS_PRODUCTION: api.env('production'),

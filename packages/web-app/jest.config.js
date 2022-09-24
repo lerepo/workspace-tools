@@ -1,4 +1,6 @@
+const pack = require('./package');
 module.exports = {
+  displayName: pack.name,
   // Jest transformations -- this adds support for TypeScript
   // using ts-jest
   transform: {
