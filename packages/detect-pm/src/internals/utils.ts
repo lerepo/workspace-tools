@@ -7,7 +7,9 @@ import { Manifest } from './manifest';
  * @author Joseph JDBar Barron
  * @link https://dev.to/jdbar
  */
-export function instanceOfNodeError<T extends new (...args: any) => Error>(
+export function instanceOfNodeError<
+  T extends new (...args: unknown[]) => Error
+>(
   value: Error,
   errorType: T
 ): value is InstanceType<T> & NodeJS.ErrnoException {
