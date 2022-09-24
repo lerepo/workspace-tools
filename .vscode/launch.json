@@ -8,15 +8,14 @@
             "type": "node",
             "name": "vscode-jest-tests",
             "request": "launch",
+            "runtimeExecutable": "yarn",
             "args": [
               "jest",
-                "--runInBand"
+              "--run-in-band",
             ],
-            "cwd": "${workspaceFolder}/packages/detect-pm",
+            "cwd": "${workspaceFolder}",
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
-            "disableOptimisticBPs": true,
-            "program": "${workspaceFolder}/.yarn/releases/yarn-2.1.1.cjs"
         }
     ]
 }
