@@ -3008,6 +3008,7 @@ __metadata:
     "@types/lodash": ^4.14.185
     "@types/node": ^18.7.18
     babel-loader: ^8.2.5
+    babel-plugin-console-source: ^2.0.5
     babel-plugin-import: ^1.13.5
     babel-plugin-module-resolver: ^4.1.0
     babel-plugin-transform-define: ^2.1.0
@@ -3058,6 +3059,7 @@ __metadata:
     "@lerepo/detect-pm": "workspace:*"
     "@types/jest": ^29.0.3
     "@types/node": ^18.7.18
+    babel-plugin-console-source: ^2.0.5
     babel-plugin-import: ^1.13.5
     babel-plugin-module-resolver: ^4.1.0
     babel-plugin-transform-define: ^2.1.0
@@ -3091,6 +3093,7 @@ __metadata:
     "@types/jest": ^29.0.3
     "@types/node": ^16
     "@types/semver": ^7.3.12
+    babel-plugin-console-source: ^2.0.5
     babel-plugin-import: ^1.13.5
     babel-plugin-module-resolver: ^4.1.0
     babel-plugin-transform-define: ^2.1.0
@@ -3138,6 +3141,7 @@ __metadata:
     "@types/react-dom": ^17
     axios: ^0.27.2
     babel-loader: ^8.2.5
+    babel-plugin-console-source: ^2.0.5
     babel-plugin-import: ^1.13.5
     babel-plugin-module-resolver: ^4.1.0
     babel-plugin-transform-define: ^2.1.0
@@ -3200,7 +3204,6 @@ __metadata:
     "@babel/plugin-proposal-class-properties": ^7.18.6
     "@babel/plugin-proposal-object-rest-spread": ^7.18.9
     "@babel/plugin-proposal-optional-chaining": ^7.18.9
-    "@babel/plugin-transform-modules-commonjs": ^7.18.6
     "@babel/plugin-transform-runtime": ^7.19.1
     "@babel/preset-env": ^7.19.1
     "@babel/preset-react": ^7.18.6
@@ -3212,6 +3215,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": ^5.38.0
     "@typescript-eslint/parser": ^5.38.0
     babel-jest: ^29.0.3
+    babel-plugin-console-source: ^2.0.5
     babel-plugin-module-resolver: ^4.1.0
     babel-plugin-transform-define: ^2.1.0
     eslint: ^8.23.1
@@ -6813,6 +6817,13 @@ __metadata:
   peerDependencies:
     "@babel/core": ^7.11.6
   checksum: 43e2100164a8f3e46fddd76afcbfb1f02cbebd5612cfe63f3d344a740b0afbdc4d2bf5659cffe9323dd2554c7b86b23ebedae9dadcec353b6594f4292a1a28e2
+  languageName: node
+  linkType: hard
+
+"babel-plugin-console-source@npm:^2.0.5":
+  version: 2.0.5
+  resolution: "babel-plugin-console-source@npm:2.0.5"
+  checksum: e560a7daca1944567383d2641a2486adb6ce31a6c0cbe601ad81de98d37de1c07bf964f6994e1b9aef1b0cae096bd058d755376238c5f0a9c89a84f355decf97
   languageName: node
   linkType: hard
 

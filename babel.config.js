@@ -15,10 +15,18 @@ module.exports = (api) => {
           ENV_IS_UNIT_TESTING: api.env('test')
         }
       ],
+      !api.env('production') && [
+        'console-source',
+        {
+          segments: 2
+          // 0 = full file path (Default)
+          // 1 = file name ONLY
+          // 2 = file name and last segment
+        }
+      ],
       '@babel/proposal-class-properties',
       '@babel/proposal-object-rest-spread',
-      '@babel/plugin-transform-runtime',
-      '@babel/plugin-transform-modules-commonjs'
+      '@babel/plugin-transform-runtime'
     ].filter(Boolean),
     babelrcRoots: ['.', 'packages/*']
   };
