@@ -2991,22 +2991,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lerepo/cli@file:./packages/cli::locator=%40lerepo%2Fworkspace-tools%40workspace%3A.":
-  version: 0.2.1
-  resolution: "@lerepo/cli@file:./packages/cli#./packages/cli::hash=11af38&locator=%40lerepo%2Fworkspace-tools%40workspace%3A."
-  dependencies:
-    "@lerepo/web-app": "workspace:^0.2.1"
-    clipanion: ^3.1.0
-    execa: ^6.1.0
-    lodash: ^4.17.21
-    regenerator-runtime: ^0.13.9
-    typanion: ^3.12.0
-  bin:
-    lrt: ./bin/lrt
-  checksum: d26162581e861b28ad64922f7079e1cdeba3e6dd5c0cf666e38c2f63968318bdb07f2157b7bcfdeb4719540fddf262582c97ec8e7611dc69a30c4227df8a3cc4
-  languageName: node
-  linkType: hard
-
 "@lerepo/cli@workspace:packages/cli":
   version: 0.0.0-use.local
   resolution: "@lerepo/cli@workspace:packages/cli"
@@ -3123,24 +3107,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@lerepo/web-app@file:./packages/web-app::locator=%40lerepo%2Fworkspace-tools%40workspace%3A.":
-  version: 0.2.1
-  resolution: "@lerepo/web-app@file:./packages/web-app#./packages/web-app::hash=2c3a72&locator=%40lerepo%2Fworkspace-tools%40workspace%3A."
-  dependencies:
-    "@fontsource/roboto": ^4.5.8
-    "@material-ui/core": ^4.12.4
-    "@material-ui/icons": ^4.11.3
-    axios: ^0.27.2
-    lodash: ^4.17.21
-    react: 18.2.0
-    react-dom: 18.2.0
-    react-force-graph-2d: ^1.23.11
-    react-router-dom: ^6.4.1
-    require-from-string: ^2.0.2
-  checksum: 775b04c5ee219366defb11556db3ef6c1ef7d3127494fd3a0dd3dfbc5145a6095270bfb067545564e7623d0e9ef66d76305400c8461d06bb1e9f2aa9d978babf
-  languageName: node
-  linkType: hard
-
 "@lerepo/web-app@workspace:^0.2.1, @lerepo/web-app@workspace:packages/web-app":
   version: 0.0.0-use.local
   resolution: "@lerepo/web-app@workspace:packages/web-app"
@@ -3242,10 +3208,6 @@ __metadata:
     "@changesets/cli": ^2.24.4
     "@commitlint/cli": ^17.1.2
     "@commitlint/config-conventional": ^17.1.0
-    "@lerepo/cli": "file:./packages/cli"
-    "@lerepo/web-app": "file:./packages/web-app"
-    "@types/jest": ^29.0.3
-    "@types/node": ^18.7.18
     "@typescript-eslint/eslint-plugin": ^5.38.0
     "@typescript-eslint/parser": ^5.38.0
     babel-jest: ^29.0.3
