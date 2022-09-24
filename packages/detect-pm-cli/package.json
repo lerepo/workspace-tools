@@ -33,9 +33,10 @@
     "lint:fix": "run-lint --fix",
     "lint:staged": "yarn g:lint:staged",
     "start": "yarn cli",
-    "test": "jest --passWithNoTests",
-    "tsc:check": "tsc --noEmit -p tsconfig.json",
-    "tsc:watch": "yarn run tsc:check --watch"
+    "t:check": "tsc --noEmit -p tsconfig.json",
+    "t:types": "yarn run t:check",
+    "t:watch": "yarn run t:check --watch",
+    "test": "jest --passWithNoTests"
   },
   "dependencies": {
     "@lerepo/detect-pm": "workspace:*",

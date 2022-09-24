@@ -35,10 +35,11 @@
     "lint:staged": "yarn g:lint:staged",
     "open": "open-cli http://localhost:3000 -- firefox -devtools",
     "start": "concurrently \"npm:cli\" \"npm:open\"",
+    "t:check": "tsc --noEmit -p tsconfig.json",
+    "t:types": "yarn run t:check",
+    "t:watch": "yarn run t:check --watch",
     "test": "jest --passWithNoTests",
-    "test:watch": "jest --watch",
-    "tsc:check": "tsc --noEmit -p tsconfig.json",
-    "tsc:watch": "yarn run tsc:check --watch"
+    "test:watch": "jest --watch"
   },
   "dependencies": {
     "@lerepo/web-app": "workspace:^0.2.1",
