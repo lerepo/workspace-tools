@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Box, useMediaQuery } from '@material-ui/core';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 
-import useWindowDimensions from '~/hooks/useWindowDimensions';
-import { useAppDrawer } from '~/contexts/use-app-drawer';
+import useWindowDimensions from '@/hooks/useWindowDimensions';
+import { useAppDrawer } from '@/contexts/use-app-drawer';
 
 const useStyles = makeStyles(() => ({
   root: {

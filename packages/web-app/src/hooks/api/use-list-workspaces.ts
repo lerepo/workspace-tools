@@ -3,7 +3,7 @@ import { useMemo, useState } from 'react';
 import { useAsyncApi, Status } from './use-async-api';
 import axios, { AxiosRequestTransformer, AxiosRequestConfig } from 'axios';
 import * as _ from 'lodash';
-import { Workspace } from '~/model/workspace';
+import { Workspace } from '@/model/workspace';
 import { TEST_DATA } from './test-data';
 
 const transformResponse = (data: string): Workspace[] => {

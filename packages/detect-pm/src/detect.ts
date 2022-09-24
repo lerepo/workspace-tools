@@ -4,10 +4,10 @@ import * as _ from 'lodash';
 import {
   findPackageManagerFromManifest,
   findPackageManagerFromSignatureFiles
-} from '~/internals/find-pm';
+} from '@/internals/find-pm';
 
-import { PackageManager, PackageManagerName } from '~/package-manager';
-import { detectInstalledPackageManagers } from '~/detect-installed';
+import { PackageManager, PackageManagerName } from '@/package-manager';
+import { detectInstalledPackageManagers } from '@/detect-installed';
 
 export type DetectionOptions = {
   cwd?: string;

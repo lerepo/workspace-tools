@@ -1,9 +1,9 @@
-jest.mock('~/internals/has-pm');
-import { has } from '~/internals/has-pm';
+jest.mock('@/internals/has-pm');
+import { has } from '@/internals/has-pm';
 const mockedHas = <jest.MockedFunction<typeof has>>has;
 
-import { detectInstalledPackageManagers } from '~/detect-installed';
-import { PackageManager } from '~/package-manager';
+import { detectInstalledPackageManagers } from '@/detect-installed';
+import { PackageManager } from '@/package-manager';
 
 describe('detectInstalledPackageManagers', () => {
   afterEach(() => {

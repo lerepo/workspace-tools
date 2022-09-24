@@ -9,7 +9,7 @@ import {
   Box,
   Typography
 } from '@material-ui/core';
-import { Workspace } from '~/model/workspace';
+import { Workspace } from '@/model/workspace';
 
 const useStyles = makeStyles({
   root: {

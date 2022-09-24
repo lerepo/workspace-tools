@@ -1,7 +1,7 @@
 import childProcess from 'child_process';
 import * as t from 'typanion';
 import { Command, Option, Usage } from 'clipanion';
-import { BaseCommand } from '../../core';
+import { BaseCommand } from '@/core';
 
 import {
   HttpServer,

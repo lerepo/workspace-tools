@@ -11,7 +11,7 @@ import {
 import { SimpleWorkspaceListItem } from './simple-workspace-list-item';
 import * as _ from 'lodash';
 
-import { Workspace } from '~/model/workspace';
+import { Workspace } from '@/model/workspace';
 
 type State = {
   selection: string[];

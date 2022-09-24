@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Workspace } from '~/model/workspace';
+import { Workspace } from '@/model/workspace';
 import { makeStyles, List, Box, Hidden } from '@material-ui/core';
 import { WorkspaceListItem } from './workspace-list-item';
 import { WorkspaceDetails } from './workspace-details';

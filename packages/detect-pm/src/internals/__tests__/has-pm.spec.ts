@@ -6,7 +6,7 @@ const mockedSemverClean = <jest.MockedFunction<typeof semver.clean>>(
   semver.clean
 );
 
-import { InstalledPackageManagerLocator, has } from '~/internals/has-pm';
+import { InstalledPackageManagerLocator, has } from '@/internals/has-pm';
 
 describe('PackageManagerLocator', () => {
   let execfs;

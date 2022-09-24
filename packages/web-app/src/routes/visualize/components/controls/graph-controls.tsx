@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { TextField, makeStyles, Box } from '@material-ui/core';
 import { SimpleWorkspaceList } from './simple-workspace-list';
-import { Workspace } from '~/model/workspace';
+import { Workspace } from '@/model/workspace';
 
 const useStyles = makeStyles({
   root: {

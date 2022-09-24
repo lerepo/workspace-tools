@@ -19,12 +19,11 @@
     "node": ">=12.18.3"
   },
   "scripts": {
-    "_r:clean": "rimraf package && rimraf package.tgz",
-    "_r:prepare": "yarn _r:clean && yarn build && yarn pack && jaguar -x package.tgz && rimraf package.tgz",
+    "_r:prepare": "yarn clean && yarn build && yarn pack && jaguar -x package.tgz && rimraf package.tgz",
     "babel:build": "babel --root-mode upward src --out-dir lib --extensions '.ts' --env-name production",
     "babel:watch": "babel --root-mode upward src --out-dir lib --extensions '.ts' --watch",
-    "build": "yarn clean && yarn babel:build",
-    "clean": "rimraf dist build lib",
+    "build": "yarn babel:build",
+    "clean": "rimraf dist build lib package package.tgz",
     "cli": "yarn node ./lib/cli.js",
     "format": "yarn g:format",
     "format:all": "yarn g:format:all",

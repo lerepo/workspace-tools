@@ -1,10 +1,10 @@
-jest.mock('~/internals/find-pm');
-jest.mock('~/detect-installed');
+jest.mock('@/internals/find-pm');
+jest.mock('@/detect-installed');
 
 import {
   findPackageManagerFromManifest,
   findPackageManagerFromSignatureFiles
-} from '~/internals/find-pm';
+} from '@/internals/find-pm';
 const mockFindPackageManagerFromManifest = <
   jest.MockedFunction<typeof findPackageManagerFromManifest>
 >findPackageManagerFromManifest;
@@ -12,12 +12,12 @@ const mockFindPackageManagerFromSignatureFiles = <
   jest.MockedFunction<typeof findPackageManagerFromSignatureFiles>
 >findPackageManagerFromSignatureFiles;
 
-import { detectInstalledPackageManagers } from '~/detect-installed';
+import { detectInstalledPackageManagers } from '@/detect-installed';
 const mockDetectInstalledPackageManagers = <
   jest.MockedFunction<typeof detectInstalledPackageManagers>
 >detectInstalledPackageManagers;
 
-import { detectPackageManagers } from '~/detect';
+import { detectPackageManagers } from '@/detect';
 
 describe('detectPackageManagers', () => {
   afterEach(() => {

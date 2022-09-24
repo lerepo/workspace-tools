@@ -4,6 +4,16 @@ module.exports = (api) => {
   return {
     presets: ['@babel/env', '@babel/typescript', '@babel/react'],
     plugins: [
+      process.env.NODE_ENV != 'test' && [
+        'module-resolver',
+        {
+          extensions: ['.js', '.es', '.es6', '.mjs', '.ts', '.tsx', '.png'],
+          root: ['./src'],
+          alias: {
+            '@': './src'
+          }
+        }
+      ],
       [
         'transform-define',
         {

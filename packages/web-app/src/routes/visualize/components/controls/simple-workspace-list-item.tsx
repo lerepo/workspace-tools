@@ -5,7 +5,7 @@ import {
   ListItemText,
   ListItemSecondaryAction
 } from '@material-ui/core';
-import { Workspace } from '~/model/workspace';
+import { Workspace } from '@/model/workspace';
 
 export type SimpleWorkspaceListItemProps = {
   workspace: Workspace;

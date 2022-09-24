@@ -8,16 +8,6 @@ module.exports = (api) => {
       : ['**/__tests__', '**/__mocks__', '**/*.spec.ts', 'src/test-setup.ts'],
     plugins: [
       [
-        'module-resolver',
-        {
-          extensions: ['.js', '.es', '.es6', '.mjs', '.ts', '.tsx', '.png'],
-          root: ['./src'],
-          alias: {
-            '~': './src'
-          }
-        }
-      ],
-      [
         'transform-define',
         {
           ENV_IS_PRODUCTION: api.env('production'),

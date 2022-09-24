@@ -5,6 +5,18 @@ module.exports = (api) => {
     presets: [
       ['@babel/preset-env', { targets: { node: 16 } }],
       '@babel/typescript'
+    ],
+    plugins: [
+      process.env.NODE_ENV != 'test' && [
+        'module-resolver',
+        {
+          extensions: ['.js', '.es', '.es6', '.mjs', '.ts'],
+          root: ['./src'],
+          alias: {
+            '@': './src'
+          }
+        }
+      ]
     ]
   };
 };

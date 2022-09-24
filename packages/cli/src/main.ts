@@ -2,9 +2,9 @@ import * as _ from 'lodash';
 import { Cli } from 'clipanion';
 import { VersionCommand } from 'clipanion/lib/advanced/builtins';
 
-import { CommandContext } from '~/core/context';
-import { HelpCommand } from '~/core/help';
-import { WebCommand } from '~/commands/web/command';
+import { CommandContext } from '@/core/context';
+import { HelpCommand } from '@/core/help';
+import { WebCommand } from '@/commands/web/command';
 
 import { version } from '../package.json';
 

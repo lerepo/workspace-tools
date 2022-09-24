@@ -1,6 +1,6 @@
 import { useCallback, useReducer, useEffect } from 'react';
 import { Theme, createMuiTheme } from '@material-ui/core';
-import { THEME_MAP, ThemeTone } from '~/theming';
+import { THEME_MAP, ThemeTone } from '@/theming';
 
 // This the media query and the mql used to get the browser dark mode
 // preference, created once and used forever.

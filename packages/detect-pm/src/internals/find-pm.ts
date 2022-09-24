@@ -1,7 +1,7 @@
 import * as semver from 'semver';
 
 import { findManifestInDirectory, checkPackageManagerFiles } from './utils';
-import { PackageManager } from '~/package-manager';
+import { PackageManager } from '@/package-manager';
 
 const PACKAGE_MANAGERS = ['npm', 'yarn', 'pnpm'];
 

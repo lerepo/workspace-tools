@@ -2,7 +2,7 @@ module.exports = {
   // Jest transformations -- this adds support for TypeScript
   // using ts-jest
   transform: {
-    '\\.[jt]sx?$': '../../tools/babel-jest/monorepo-transformer.js'
+    '\\.[jt]sx?$': '../../tools/test/babel-transformer.js'
   },
 
   // Test spec file resolution pattern

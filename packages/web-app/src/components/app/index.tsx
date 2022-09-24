@@ -4,14 +4,14 @@ import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import { CssBaseline, ThemeProvider } from '@material-ui/core';
 import { styled } from '@material-ui/core/styles';
 
-import { VisualizePage } from '~/routes/visualize';
-import { ExplorePage } from '~/routes/explore';
-import { AnalyzePage } from '~/routes/analyze';
-import { Root } from '~/components/root';
-import { AppDrawer } from '~/components/drawer';
-import { AppHeader } from '~/components/header';
-import { useThemeSettings } from '~/hooks/theming';
-import { AppDrawerProvider } from '~/contexts';
+import { VisualizePage } from '@/routes/visualize';
+import { ExplorePage } from '@/routes/explore';
+import { AnalyzePage } from '@/routes/analyze';
+import { Root } from '@/components/root';
+import { AppDrawer } from '@/components/drawer';
+import { AppHeader } from '@/components/header';
+import { useThemeSettings } from '@/hooks/theming';
+import { AppDrawerProvider } from '@/contexts';
 
 const Main = styled('div')({
   flex: '1 1 auto',

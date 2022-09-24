@@ -1,5 +1,5 @@
-import { has } from '~/internals/has-pm';
-import { PackageManager, PackageManagerName } from '~/package-manager';
+import { has } from '@/internals/has-pm';
+import { PackageManager, PackageManagerName } from '@/package-manager';
 
 export const detectInstalledPackageManagers = async (): Promise<
   PackageManager[]

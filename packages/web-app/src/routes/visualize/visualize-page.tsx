@@ -1,11 +1,11 @@
 import React, { useEffect, useCallback, useState } from 'react';
 
-import { ForceGraph, GraphControls } from '~/routes/visualize/components';
+import { ForceGraph, GraphControls } from '@/routes/visualize/components';
 import { CircularProgress, makeStyles, Box } from '@material-ui/core';
 
-import { Workspace } from '~/model/workspace';
-import { useAppDrawer } from '~/contexts/use-app-drawer';
-import { useListWorkspaces } from '~/hooks/api/use-list-workspaces';
+import { Workspace } from '@/model/workspace';
+import { useAppDrawer } from '@/contexts/use-app-drawer';
+import { useListWorkspaces } from '@/hooks/api/use-list-workspaces';
 
 const useStyles = makeStyles({
   spinner: {

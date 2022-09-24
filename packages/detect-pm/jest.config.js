@@ -2,7 +2,7 @@ module.exports = {
   // Jest transformations -- this adds support for TypeScript
   // using ts-jest
   transform: {
-    '\\.[jt]sx?$': '../../tools/babel-jest/monorepo-transformer.js'
+    '\\.[jt]sx?$': '../../tools/test/babel-transformer.js'
   },
 
   // Test spec file resolution pattern
@@ -13,5 +13,8 @@ module.exports = {
   modulePathIgnorePatterns: ['lib', 'build', 'dist'],
 
   // Module file extensions for importing
-  moduleFileExtensions: ['ts', 'js', 'json', 'node']
+  moduleFileExtensions: ['ts', 'js', 'json', 'node'],
+  moduleNameMapper: {
+    '@/(.*)$': '<rootDir>/src/$1'
+  }
 };

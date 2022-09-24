@@ -1,6 +1,6 @@
-export { detectInstalledPackageManagers } from '~/detect-installed';
-export { detectPackageManagers } from '~/detect';
+export { detectInstalledPackageManagers } from '@/detect-installed';
+export { detectPackageManagers } from '@/detect';
 export {
   type PackageManager,
   type PackageManagerName
-} from '~/package-manager';
+} from '@/package-manager';

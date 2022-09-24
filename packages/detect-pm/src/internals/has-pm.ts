@@ -1,7 +1,7 @@
 import childProcess from 'child_process';
 import semver from 'semver';
 
-import { PackageManager, PackageManagerName } from '~/package-manager';
+import { PackageManager, PackageManagerName } from '@/package-manager';
 
 export class InstalledPackageManagerLocator implements PackageManager {
   private _detectionDone = false;

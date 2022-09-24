@@ -3,9 +3,9 @@ import React, { useCallback, useEffect, useState, useRef } from 'react';
 import { useTheme, useMediaQuery } from '@material-ui/core';
 import ForceGraph2D from 'react-force-graph-2d';
 
-import useWindowDimensions from '~/hooks/useWindowDimensions';
-import { useAppDrawer } from '~/contexts/use-app-drawer';
-import { Workspace } from '~/model/workspace';
+import useWindowDimensions from '@/hooks/useWindowDimensions';
+import { useAppDrawer } from '@/contexts/use-app-drawer';
+import { Workspace } from '@/model/workspace';
 
 type Link = {
   source: string;

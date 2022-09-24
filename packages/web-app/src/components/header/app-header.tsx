@@ -10,9 +10,9 @@ import {
 } from '@material-ui/core';
 import { Menu, MenuOpen, GitHub, InvertColors } from '@material-ui/icons';
 
-import { Transition } from '~/components/transition';
+import { Transition } from '@/components/transition';
 import { HeaderTitle } from './title';
-import { useAppDrawer } from '~/contexts/use-app-drawer';
+import { useAppDrawer } from '@/contexts/use-app-drawer';
 
 export type HeaderProps = {
   toggleDarkMode: () => void;

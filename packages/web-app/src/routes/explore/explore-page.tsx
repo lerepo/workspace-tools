@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { useListWorkspaces } from '~/hooks/api/use-list-workspaces';
+import { useListWorkspaces } from '@/hooks/api/use-list-workspaces';
 import { Box, CircularProgress, makeStyles } from '@material-ui/core';
 import { WorkspaceList } from './components/workspace-list';
 

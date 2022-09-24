@@ -1,5 +1,5 @@
 import React from 'react';
-import { Workspace } from '~/model/workspace';
+import { Workspace } from '@/model/workspace';
 import { ListItem, ListItemText, Collapse, Hidden } from '@material-ui/core';
 import { ExpandLess, ExpandMore } from '@material-ui/icons';
 import { WorkspaceDetails } from './workspace-details';

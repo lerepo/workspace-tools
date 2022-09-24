@@ -9,12 +9,12 @@ import {
   Divider
 } from '@material-ui/core';
 
-import LOGO_LIGHT_IMAGE from '~/assets/lerepo-light.png';
-import LOGO_DARK_IMAGE from '~/assets/lerepo-dark.png';
+import LOGO_LIGHT_IMAGE from '@/assets/lerepo-light.png';
+import LOGO_DARK_IMAGE from '@/assets/lerepo-dark.png';
 
-import { Transition } from '~/components/transition';
+import { Transition } from '@/components/transition';
 import { NavLinks } from './nav-links';
-import { useAppDrawer } from '~/contexts/use-app-drawer';
+import { useAppDrawer } from '@/contexts/use-app-drawer';
 
 const useStyles = makeStyles<Theme>((theme) => ({
   spacer: {

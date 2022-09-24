@@ -10,7 +10,7 @@ const mockedExistsSync = <jest.MockedFunction<typeof fs.existsSync>>(
 import {
   findManifestInDirectory,
   checkPackageManagerFiles
-} from '~/internals/utils';
+} from '@/internals/utils';
 
 describe('findManifestInDirectory', () => {
   it('should return manifest content when found', () => {
