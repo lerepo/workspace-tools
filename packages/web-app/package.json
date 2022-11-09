@@ -19,7 +19,7 @@
     "_r:prepare": "yarn clean && yarn build && yarn pack && jaguar -x package.tgz && rimraf package.tgz",
     "build": "yarn webpack:quiet",
     "build-storybook": "build-storybook",
-    "clean": "rimraf dist build package package.tgz",
+    "clean": "rimraf dist build lib package package.tgz *.tsbuildinfo",
     "format": "yarn g:format",
     "format:all": "yarn g:format:all",
     "format:list": "yarn g:format:list",
