@@ -1,6 +1,6 @@
 {
   "name": "@lerepo/cli",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "publishConfig": {
     "access": "public",
     "directory": "package"
@@ -39,7 +39,7 @@
     "test:watch": "jest --watch"
   },
   "dependencies": {
-    "@lerepo/web-app": "workspace:^0.2.2",
+    "@lerepo/web-app": "workspace:^0.2.3",
     "clipanion": "^3.1.0",
     "execa": "^6.1.0",
     "lodash": "^4.17.21",

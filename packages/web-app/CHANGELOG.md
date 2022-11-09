@@ -1,5 +1,15 @@
 # @lerepo/web-app
 
+## 0.2.3
+
+### Patch Changes
+
+- 44ca1cb: Fix: force higher versions for dependencies to resolve known security issues
+
+  https://github.com/lerepo/workspace-tools/security/dependabot/33
+  https://github.com/lerepo/workspace-tools/security/dependabot/34
+  https://github.com/lerepo/workspace-tools/security/dependabot/35
+
 ## 0.2.2
 
 ### Patch Changes

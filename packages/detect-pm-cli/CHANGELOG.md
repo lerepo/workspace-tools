@@ -1,5 +1,18 @@
 # @lerepo/detect-package-manager-cli
 
+## 0.4.3
+
+### Patch Changes
+
+- 44ca1cb: Fix: force higher versions for dependencies to resolve known security issues
+
+  https://github.com/lerepo/workspace-tools/security/dependabot/33
+  https://github.com/lerepo/workspace-tools/security/dependabot/34
+  https://github.com/lerepo/workspace-tools/security/dependabot/35
+
+- Updated dependencies [44ca1cb]
+  - @lerepo/detect-pm@0.3.4
+
 ## 0.4.2
 
 ### Patch Changes
