@@ -3003,7 +3003,7 @@ __metadata:
     "@babel/preset-env": ^7.19.1
     "@babel/preset-typescript": ^7.18.6
     "@babel/runtime": ^7.19.0
-    "@lerepo/web-app": "workspace:^0.2.1"
+    "@lerepo/web-app": "workspace:^0.2.2"
     "@types/jest": ^29.0.3
     "@types/lodash": ^4.14.185
     "@types/node": ^18.7.18
@@ -3110,7 +3110,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@lerepo/web-app@workspace:^0.2.1, @lerepo/web-app@workspace:packages/web-app":
+"@lerepo/web-app@workspace:^0.2.2, @lerepo/web-app@workspace:packages/web-app":
   version: 0.0.0-use.local
   resolution: "@lerepo/web-app@workspace:packages/web-app"
   dependencies:
@@ -14435,17 +14435,6 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"json5@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "json5@npm:1.0.1"
-  dependencies:
-    minimist: ^1.2.0
-  bin:
-    json5: lib/cli.js
-  checksum: e76ea23dbb8fc1348c143da628134a98adf4c5a4e8ea2adaa74a80c455fc2cdf0e2e13e6398ef819bfe92306b610ebb2002668ed9fc1af386d593691ef346fc3
-  languageName: node
-  linkType: hard
-
 "json5@npm:^2.1.2":
   version: 2.1.3
   resolution: "json5@npm:2.1.3"
@@ -14843,25 +14832,14 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"loader-utils@npm:^1.2.3":
-  version: 1.4.0
-  resolution: "loader-utils@npm:1.4.0"
-  dependencies:
-    big.js: ^5.2.2
-    emojis-list: ^3.0.0
-    json5: ^1.0.1
-  checksum: d150b15e7a42ac47d935c8b484b79e44ff6ab4c75df7cc4cb9093350cf014ec0b17bdb60c5d6f91a37b8b218bd63b973e263c65944f58ca2573e402b9a27e717
-  languageName: node
-  linkType: hard
-
-"loader-utils@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "loader-utils@npm:2.0.0"
+"loader-utils@npm:^2.0.3":
+  version: 2.0.3
+  resolution: "loader-utils@npm:2.0.3"
   dependencies:
     big.js: ^5.2.2
     emojis-list: ^3.0.0
     json5: ^2.1.2
-  checksum: 6856423131b50b6f5f259da36f498cfd7fc3c3f8bb17777cf87fdd9159e797d4ba4288d9a96415fd8da62c2906960e88f74711dee72d03a9003bddcd0d364a51
+  checksum: d055c61ce5927b64cb4af40218606603a7d3a39adb7b6eec116bb31d19203875950e478152dea056de404eced8e87e9bfd336ec636591ded040ea451f63c7d88
   languageName: node
   linkType: hard
 
@@ -15607,16 +15585,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"minimatch@npm:^3.0.2, minimatch@npm:^3.0.4":
-  version: 3.0.4
-  resolution: "minimatch@npm:3.0.4"
-  dependencies:
-    brace-expansion: ^1.1.7
-  checksum: 66ac295f8a7b59788000ea3749938b0970344c841750abd96694f80269b926ebcafad3deeb3f1da2522978b119e6ae3a5869b63b13a7859a456b3408bd18a078
-  languageName: node
-  linkType: hard
-
-"minimatch@npm:^3.1.1, minimatch@npm:^3.1.2":
+"minimatch@npm:^3.0.5":
   version: 3.1.2
   resolution: "minimatch@npm:3.1.2"
   dependencies:
