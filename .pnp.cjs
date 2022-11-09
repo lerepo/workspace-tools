@@ -19827,7 +19827,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["normalize-package-data", "npm:3.0.3"],\
             ["read-pkg-up", "npm:8.0.0"],\
             ["redent", "npm:4.0.0"],\
-            ["trim-newlines", "npm:4.0.2"],\
+            ["trim-newlines", "npm:3.0.1"],\
             ["type-fest", "npm:1.4.0"],\
             ["yargs-parser", "npm:20.2.9"]\
           ],\
@@ -19846,7 +19846,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["object-assign", "npm:4.1.1"],\
             ["read-pkg-up", "npm:1.0.1"],\
             ["redent", "npm:1.0.0"],\
-            ["trim-newlines", "npm:4.0.2"]\
+            ["trim-newlines", "npm:3.0.1"]\
           ],\
           "linkType": "HARD"\
         }],\
@@ -19862,7 +19862,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["normalize-package-data", "npm:2.5.0"],\
             ["read-pkg-up", "npm:7.0.1"],\
             ["redent", "npm:3.0.0"],\
-            ["trim-newlines", "npm:4.0.2"],\
+            ["trim-newlines", "npm:3.0.1"],\
             ["type-fest", "npm:0.13.1"],\
             ["yargs-parser", "npm:18.1.3"]\
           ],\
@@ -19882,7 +19882,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["normalize-package-data", "npm:2.5.0"],\
             ["read-pkg-up", "npm:7.0.1"],\
             ["redent", "npm:3.0.0"],\
-            ["trim-newlines", "npm:4.0.2"],\
+            ["trim-newlines", "npm:3.0.1"],\
             ["type-fest", "npm:0.13.1"],\
             ["yargs-parser", "npm:18.1.3"]\
           ],\
@@ -19900,7 +19900,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["normalize-package-data", "npm:3.0.3"],\
             ["read-pkg-up", "npm:7.0.1"],\
             ["redent", "npm:3.0.0"],\
-            ["trim-newlines", "npm:4.0.2"],\
+            ["trim-newlines", "npm:3.0.1"],\
             ["type-fest", "npm:0.18.1"],\
             ["yargs-parser", "npm:20.2.9"]\
           ],\
@@ -27483,10 +27483,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["trim-newlines", [\
-        ["npm:4.0.2", {\
-          "packageLocation": "./.yarn/cache/trim-newlines-npm-4.0.2-e01f9adaf9-1eef206eb7.zip/node_modules/trim-newlines/",\
+        ["npm:3.0.1", {\
+          "packageLocation": "./.yarn/cache/trim-newlines-npm-3.0.1-22f1f216de-b530f3fadf.zip/node_modules/trim-newlines/",\
           "packageDependencies": [\
-            ["trim-newlines", "npm:4.0.2"]\
+            ["trim-newlines", "npm:3.0.1"]\
           ],\
           "linkType": "HARD"\
         }]\
