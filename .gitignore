@@ -95,3 +95,6 @@ packages/*/package
 # Documentation here: https://yarnpkg.com/features/zero-installs
 !.yarn/cache
 #.pnp.*
+
+packages/*/tsconfig.lib.tsbuildinfo
+packages/*/tsconfig.tsbuildinfo
