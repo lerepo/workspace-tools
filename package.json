@@ -12,7 +12,7 @@
     "yarn": ">=2"
   },
   "scripts": {
-    "_for-all": "yarn workspaces foreach --no-private --verbose",
+    "_for-all": "yarn workspaces foreach --all --no-private --verbose",
     "_format": "prettier $INIT_CWD --config .prettierrc.js --ignore-path .prettierignore",
     "_r:prepare": "yarn _for-all run _r:prepare",
     "g:build": "yarn _for-all run build",
@@ -110,7 +110,7 @@
       "commit-msg": "yarn commitlint -E HUSKY_GIT_PARAMS"
     }
   },
-  "packageManager": "yarn@3.2.3",
+  "packageManager": "yarn@4.1.1",
   "workspaces": [
     "packages/*"
   ]
