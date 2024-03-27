@@ -138,15 +138,12 @@ module.exports = (env, options) => {
       historyApiFallback: true,
       hot: true,
       // Send API requests on localhost to API server get around CORS.
-      proxy: {
-        '/api': {
-          target: {
-            host: '0.0.0.0',
-            protocol: 'http:',
-            port: 3211
-          }
+      proxy: [
+        {
+          context: '/api',
+          target: 'http://localhost:32221'
         }
-      }
+      ]
     },
 
     resolve: {

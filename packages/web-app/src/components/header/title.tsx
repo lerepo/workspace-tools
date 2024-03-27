@@ -1,9 +1,14 @@
-import { styled } from '@material-ui/core/styles';
-import { Typography } from '@material-ui/core';
+import React from 'react';
+import { Typography } from '@mui/material';
 
-export const HeaderTitle = styled(Typography)({
-  flex: '1 1 auto',
-  whiteSpace: 'pre',
-  textOverflow: 'ellipsis',
-  overflow: 'hidden'
-});
+export const HeaderTitle = (props) => (
+  <Typography
+    sx={{
+      flex: '1 1 auto',
+      whiteSpace: 'pre',
+      textOverflow: 'ellipsis',
+      overflow: 'hidden'
+    }}
+    {...props}
+  />
+);

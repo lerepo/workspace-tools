@@ -1,5 +1,5 @@
 import { useCallback, useReducer, useEffect } from 'react';
-import { Theme, createMuiTheme } from '@material-ui/core';
+import { Theme, createTheme } from '@mui/material';
 import { THEME_MAP, ThemeTone } from '@/theming';
 
 // This the media query and the mql used to get the browser dark mode
@@ -48,7 +48,7 @@ const initialState = (fallback: ThemeTone): State => {
   persistedSettings && ({ themeName, themeTone } = persistedSettings);
   console.log(`initialState: getMuiTheme(${themeName}, ${themeTone})`);
   const theme = getMuiTheme(themeName, themeTone);
-  console.log(`initialState: new theme is (${theme.palette.type})`);
+  console.log(`initialState: new theme is (${theme.palette.mode})`);
   return {
     themeName,
     themeTone,
@@ -118,7 +118,7 @@ const reducer = (state: State, action: ActionType) => {
         : state;
     }
     case ENABLE_DARK_MODE_ACTION: {
-      if (state.themeTone !== 'dark') {
+      if (state.theme.palette.mode !== 'dark') {
         return {
           ...state,
           themeTone: 'dark' as ThemeTone,
@@ -127,7 +127,7 @@ const reducer = (state: State, action: ActionType) => {
       } else return state;
     }
     case ENABLE_LIGHT_MODE_ACTION: {
-      if (state.themeTone !== 'light') {
+      if (state.theme.palette.mode !== 'light') {
         return {
           ...state,
           themeTone: 'light' as ThemeTone,
@@ -166,7 +166,7 @@ export type ThemeSettings = State & {
 const getMuiTheme = (name: string, tone: ThemeTone): Theme => {
   console.log('getMuiTheme', name, tone);
   const options = THEME_MAP.get(`${name}-${tone}`) || {};
-  return createMuiTheme(options);
+  return createTheme(options);
 };
 
 export const useThemeSettings = (): ThemeSettings => {

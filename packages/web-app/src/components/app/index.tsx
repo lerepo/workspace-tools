@@ -1,8 +1,7 @@
 import React from 'react';
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 
-import { CssBaseline, ThemeProvider } from '@material-ui/core';
-import { styled } from '@material-ui/core/styles';
+import { CssBaseline, ThemeProvider, Box } from '@mui/material';
 
 import { VisualizePage } from '@/routes/visualize';
 import { ExplorePage } from '@/routes/explore';
@@ -12,11 +11,6 @@ import { AppDrawer } from '@/components/drawer';
 import { AppHeader } from '@/components/header';
 import { useThemeSettings } from '@/hooks/theming';
 import { AppDrawerProvider } from '@/contexts';
-
-const Main = styled('div')({
-  flex: '1 1 auto',
-  display: 'flex'
-});
 
 // export type AppDrawer = {
 //   isOpen: boolean;
@@ -49,7 +43,7 @@ export const App: React.FC = () => {
   //   hide: () => open && setOpen(false)
   // };
 
-  console.log(`App rendering with ${theme.palette.type}...`);
+  console.log(`App rendering with ${theme.palette.mode}...`);
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -58,13 +52,13 @@ export const App: React.FC = () => {
           <Root>
             <AppDrawer />
             <AppHeader toggleDarkMode={toggleDarkMode} />
-            <Main>
+            <Box sx={{flex: '1 1 auto', display: 'flex'}}>
               <Routes>
                 <Route path="/explore" element={<ExplorePage />} />
                 <Route path="/visualize" element={<VisualizePage />} />
                 <Route path="/analyze" element={<AnalyzePage />} />
               </Routes>
-            </Main>
+            </Box>
           </Root>
         </AppDrawerProvider>
       </Router>

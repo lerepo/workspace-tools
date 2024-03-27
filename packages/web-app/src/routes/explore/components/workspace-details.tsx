@@ -5,29 +5,17 @@ import {
   ListItem,
   ListItemText,
   List,
-  makeStyles,
   Box,
   Typography
-} from '@material-ui/core';
+} from '@mui/material';
 import { Workspace } from '@/model/workspace';
-
-const useStyles = makeStyles({
-  root: {
-    padding: '1rem'
-  },
-  card: {
-    marginBottom: '1rem'
-  }
-});
 
 export const WorkspaceDetails: React.FC<{ workspace: Workspace }> = ({
   workspace
 }) => {
-  const classes = useStyles();
-
   return (
-    <Box className={classes.root}>
-      <Card className={classes.card}>
+    <Box sx={{ padding: '1rem' }}>
+      <Card sx={{ marginBottom: '1rem' }}>
         <CardContent>
           <Typography component="h6" variant="h6">
             {workspace.dependencies.length > 0
@@ -48,7 +36,7 @@ export const WorkspaceDetails: React.FC<{ workspace: Workspace }> = ({
         </CardContent>
       </Card>
       {workspace.mismatchedDependencies?.length > 0 && (
-        <Card className={classes.card}>
+        <Card sx={{ marginBottom: '1rem' }}>
           <CardContent>
             <Typography component="h6" variant="h6">
               Mismatched Dependencies
@@ -66,7 +54,7 @@ export const WorkspaceDetails: React.FC<{ workspace: Workspace }> = ({
         </Card>
       )}
       {workspace.dependents.length > 0 && (
-        <Card className={classes.card}>
+        <Card sx={{ marginBottom: '1rem' }}>
           <CardContent>
             <Typography component="h6" variant="h6">
               Is a dependency of

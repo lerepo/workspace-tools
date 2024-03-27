@@ -1,7 +1,7 @@
 import React from 'react';
 import { Workspace } from '@/model/workspace';
-import { ListItem, ListItemText, Collapse, Hidden } from '@material-ui/core';
-import { ExpandLess, ExpandMore } from '@material-ui/icons';
+import { ListItem, ListItemText, Collapse, Hidden } from '@mui/material';
+import { ExpandLess, ExpandMore } from '@mui/icons-material';
 import { WorkspaceDetails } from './workspace-details';
 
 export const WorkspaceListItem: React.FC<{

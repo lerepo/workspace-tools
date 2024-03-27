@@ -36,7 +36,7 @@ export class WebCommand extends BaseCommand {
     ]
   });
 
-  public port? = Option.String('--port', {
+  public port? = Option.String('--port', DEFAULT_SERVER_PORT.toString(), {
     required: false,
     validator: t.cascade(t.isNumber(), [
       t.isInteger(),

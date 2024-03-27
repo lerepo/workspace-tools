@@ -1,13 +1,12 @@
 import React, { useCallback, useReducer, useEffect, useState } from 'react';
 import {
   List,
-  makeStyles,
   Checkbox,
   Box,
   ListItem,
   ListItemText,
   ListItemSecondaryAction
-} from '@material-ui/core';
+} from '@mui/material';
 import { SimpleWorkspaceListItem } from './simple-workspace-list-item';
 import * as _ from 'lodash';
 
@@ -59,18 +58,10 @@ export type WorkspaceListProps = {
   workspaces: string[];
 };
 
-const useStyles = makeStyles({
-  root: {
-    width: '100%',
-    flex: '1 1 0'
-  }
-});
-
-export const SimpleWorkspaceList: React.SFC<{
+export const SimpleWorkspaceList: React.FC<{
   workspaces: Workspace[];
   onSelectionUpdate: (selection: string[]) => void;
 }> = ({ workspaces, onSelectionUpdate }) => {
-  const classes = useStyles();
   const [state, dispatch] = useReducer(reducer, workspaces, initialState);
   const [multiSelectionState, setMultiSelectionState] = useState<
     'all' | 'none' | 'indeterminate' | 'disabled'
@@ -126,7 +117,7 @@ export const SimpleWorkspaceList: React.SFC<{
 
   console.log(`workspaces list: ${workspaces.length}`);
   return (
-    <Box className={classes.root}>
+    <Box sx={{width: '100%', flex: '1 1 0'}}>
       <List dense>
         <ListItem key={'multi-select-checkbox'}>
           <ListItemText primary="&nbsp;" />

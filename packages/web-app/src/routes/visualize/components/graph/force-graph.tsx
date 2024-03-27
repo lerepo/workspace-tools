@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState, useRef } from 'react';
 
-import { useTheme, useMediaQuery } from '@material-ui/core';
+import { useTheme, useMediaQuery } from '@mui/material';
 import ForceGraph2D from 'react-force-graph-2d';
 
 import useWindowDimensions from '@/hooks/useWindowDimensions';

@@ -8,8 +8,8 @@ import {
   ListItem,
   ListItemIcon,
   ListItemText
-} from '@material-ui/core';
-import { Explore, BubbleChart, Assessment, GitHub } from '@material-ui/icons';
+} from '@mui/material';
+import { Explore, BubbleChart, Assessment, GitHub } from '@mui/icons-material';
 
 export interface BaseDrawerLink {
   label: string;

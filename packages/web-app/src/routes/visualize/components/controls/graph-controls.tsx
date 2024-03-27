@@ -1,27 +1,12 @@
 import React, { useState } from 'react';
-import { TextField, makeStyles, Box } from '@material-ui/core';
+import { TextField, Box } from '@mui/material';
 import { SimpleWorkspaceList } from './simple-workspace-list';
 import { Workspace } from '@/model/workspace';
 
-const useStyles = makeStyles({
-  root: {
-    width: '100%',
-    flex: '1 1 0',
-    display: 'flex',
-    flexDirection: 'column'
-  },
-  filter: {
-    margin: '12px',
-    width: 'auto',
-    flexShrink: 0
-  }
-});
-
-export const GraphControls: React.SFC<{
+export const GraphControls: React.FC<{
   data: Workspace[];
   onSelectionUpdate: (selection: string[]) => void;
 }> = ({ data, onSelectionUpdate }) => {
-  const classes = useStyles();
   const [filter, setFilter] = useState('');
 
   const applyFilter = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -30,10 +15,19 @@ export const GraphControls: React.SFC<{
   };
 
   return (
-    <Box className={classes.root}>
+    <Box sx={{
+      width: '100%',
+      flex: '1 1 0',
+      display: 'flex',
+      flexDirection: 'column'
+    }}>
       <TextField
         key="filter-text-field"
-        className={classes.filter}
+        sx={{
+          margin: '12px',
+          width: 'auto',
+          flexShrink: 0
+        }}
         label="Filter"
         placeholder="start typing..."
         InputLabelProps={{

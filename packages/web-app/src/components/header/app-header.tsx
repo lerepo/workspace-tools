@@ -7,12 +7,13 @@ import {
   Hidden,
   IconButton,
   Tooltip
-} from '@material-ui/core';
-import { Menu, MenuOpen, GitHub, InvertColors } from '@material-ui/icons';
+} from '@mui/material';
+import { Menu, MenuOpen, GitHub, InvertColors } from '@mui/icons-material';
 
 import { Transition } from '@/components/transition';
-import { HeaderTitle } from './title';
 import { useAppDrawer } from '@/contexts/use-app-drawer';
+
+import { HeaderTitle } from './title';
 
 export type HeaderProps = {
   toggleDarkMode: () => void;

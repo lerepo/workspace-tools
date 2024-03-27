@@ -1,8 +1,8 @@
-import React, { useState, useMemo } from 'react';
+import React, { PropsWithChildren, useState, useMemo } from 'react';
 
 import { AppDrawerContextType, AppDrawerContext } from './app-drawer-context';
 
-export const AppDrawerProvider: React.FC = ({
+export const AppDrawerProvider: React.FC<PropsWithChildren> = ({
   children
 }): React.ReactElement => {
   const [open, setOpen] = useState(false);

@@ -1,29 +1,16 @@
-import React, { useEffect, useState } from 'react';
-import { Box, useMediaQuery } from '@material-ui/core';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import React, { PropsWithChildren, useEffect, useState } from 'react';
+
+import { Box, useMediaQuery, useTheme } from '@mui/material';
 
 import useWindowDimensions from '@/hooks/useWindowDimensions';
 import { useAppDrawer } from '@/contexts/use-app-drawer';
 
-const useStyles = makeStyles(() => ({
-  root: {
-    display: 'flex',
-    flexDirection: 'column',
-    float: 'right',
-    transition: 'width 180ms',
-    minHeight: '100vh',
-    height: '100vh',
-    overflow: 'hidden'
-  }
-}));
-
-export const Root: React.FC = ({ children }) => {
+export const Root: React.FC<PropsWithChildren> = ({ children }) => {
   const [width, setWidth] = useState(0);
   const { width: vwidth } = useWindowDimensions();
   const drawer = useAppDrawer();
 
   const theme = useTheme();
-  const classes = useStyles();
   const smup = useMediaQuery(theme.breakpoints.up('sm'));
   const lgup = useMediaQuery(theme.breakpoints.up('lg'));
 
@@ -39,7 +26,18 @@ export const Root: React.FC = ({ children }) => {
   }, [vwidth, lgup, smup, width, drawer]);
 
   return (
-    <Box className={classes.root} width={width}>
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        float: 'right',
+        transition: 'width 180ms',
+        minHeight: '100vh',
+        height: '100vh',
+        overflow: 'hidden'
+      }}
+      width={width}
+    >
       {children}
     </Box>
   );

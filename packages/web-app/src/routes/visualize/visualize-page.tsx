@@ -1,24 +1,13 @@
 import React, { useEffect, useCallback, useState } from 'react';
 
 import { ForceGraph, GraphControls } from '@/routes/visualize/components';
-import { CircularProgress, makeStyles, Box } from '@material-ui/core';
+import { CircularProgress, Box } from '@mui/material';
 
 import { Workspace } from '@/model/workspace';
 import { useAppDrawer } from '@/contexts/use-app-drawer';
 import { useListWorkspaces } from '@/hooks/api/use-list-workspaces';
 
-const useStyles = makeStyles({
-  spinner: {
-    width: '100%',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center'
-  }
-});
-
 export const VisualizePage: React.FC = () => {
-  const classes = useStyles();
   const [selection, setSelection] = useState<string[]>([]);
   const drawer = useAppDrawer();
   const { status, data, error } = useListWorkspaces();
@@ -52,7 +41,15 @@ export const VisualizePage: React.FC = () => {
     <>
       {status === 'idle' ||
         (status === 'pending' && (
-          <Box className={classes.spinner}>
+          <Box
+            sx={{
+              width: '100%',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center'
+            }}
+          >
             <CircularProgress />
           </Box>
         ))}
