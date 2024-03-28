@@ -24,8 +24,8 @@ module.exports = (api) => {
           // 2 = file name and last segment
         }
       ],
-      '@babel/proposal-class-properties',
-      '@babel/proposal-object-rest-spread',
+      '@babel/plugin-transform-class-properties',
+      '@babel/plugin-transform-object-rest-spread',
       '@babel/plugin-transform-runtime'
     ].filter(Boolean),
     babelrcRoots: ['.', 'packages/*']

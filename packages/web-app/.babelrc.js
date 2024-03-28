@@ -28,7 +28,7 @@ module.exports = (api) => {
       ],
       // Enable tree-shaking for @blueprintjs/core
       // ['import', { libraryName: '@blueprintjs/core', libraryDirectory: 'lib/esm/components' }],
-      '@babel/plugin-proposal-optional-chaining'
+      '@babel/plugin-transform-optional-chaining'
     ].filter(Boolean)
   };
 };
