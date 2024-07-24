@@ -43,7 +43,7 @@ export const findManifestInDirectory = (directory: string): Manifest | null => {
 
 const PACKAGE_MANAGERS_FILES = {
   npm: ['package-lock.json'],
-  pnpm: ['pnpm-lock.yaml', 'pnpm-workspaces.yaml', 'pnpmfile.js'],
+  pnpm: ['pnpm-lock.yaml', 'pnpm-workspaces.yaml', 'pnpmfile.js', 'package.yaml'],
   yarn: ['yarn.lock', '.yarnrc.yml']
 };
 
