@@ -16899,7 +16899,7 @@ const RAW_RUNTIME_STATE =
           ["gunzip-maybe", "npm:1.4.2"],\
           ["minimist", "npm:1.2.8"],\
           ["pipe-io", "npm:4.0.1"],\
-          ["tar-fs", "npm:2.1.1"],\
+          ["tar-fs", "npm:2.1.3"],\
           ["tar-stream", "npm:2.2.0"],\
           ["try-to-catch", "npm:3.0.1"]\
         ],\
@@ -24325,10 +24325,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["tar-fs", [\
-      ["npm:2.1.1", {\
-        "packageLocation": "./.yarn/cache/tar-fs-npm-2.1.1-e374d3b7a2-526deae025.zip/node_modules/tar-fs/",\
+      ["npm:2.1.3", {\
+        "packageLocation": "./.yarn/cache/tar-fs-npm-2.1.3-32d6d6fb31-37fdfd3aa7.zip/node_modules/tar-fs/",\
         "packageDependencies": [\
-          ["tar-fs", "npm:2.1.1"],\
+          ["tar-fs", "npm:2.1.3"],\
           ["chownr", "npm:1.1.4"],\
           ["mkdirp-classic", "npm:0.5.3"],\
           ["pump", "npm:3.0.0"],\
